@@ -25,28 +25,11 @@ module.exports = {
   */
   loading: { color: '#36afc5' },
 
-  proxy: { // https://github.com/nuxt-community/proxy-module
-    '/.netlify/functions/': {
-      target: 'http://localhost:9000/',
-      pathRewrite: { '^/.netlify/functions/': '' },
-    }
-  },
-
   router: {
     middleware: 'meta-canonical'
   },
 
   modules: [
-    '@nuxtjs/proxy',
-    ['@nuxtjs/google-analytics', { // https://github.com/nuxt-community/analytics-module
-      id: 'UA-115661848-2',
-      debug: { enabled: false }, // https://matteogabriele.gitbooks.io/vue-analytics/content/docs/debug.html
-      set: [
-        // https://www.themarketingtechnologist.co/setting-up-a-cookie-law-compliant-google-analytics-tracker/
-        { field: 'displayFeaturesTask', value: null },
-        { field: 'anonymizeIp', value: true },
-      ],
-    }],
     ['@nuxtjs/sitemap', { // https://github.com/nuxt-community/sitemap-module
       path: '/sitemap.xml',
       hostname: baseUrl,

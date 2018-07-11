@@ -34,19 +34,3 @@ function generateIndexPage (dato) {
     title: dato.siteInfo.title
   }
 }
-
-function removeSeoMetaTags (item) {
-  if (item && item.seoMetaTags) {
-    delete item.seoMetaTags
-  }
-  if (typeof item === 'object') {
-    Object.keys(item).forEach(key => {
-      if (Array.isArray(item[key])) {
-        item[key].forEach(removeSeoMetaTags)
-      } else if (item[key] && typeof item[key] === 'object') {
-        removeSeoMetaTags(item[key])
-      }
-    })
-  }
-  return item
-}

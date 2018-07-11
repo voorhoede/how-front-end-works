@@ -1,7 +1,7 @@
 {
-  "name": "pick-up-10",
+  "name": "front-end-abc",
   "version": "1.0.0",
-  "description": "Pick Up 10 Challenge",
+  "description": "Front-end ABC",
   "author": "De Voorhoede (https://www.voorhoede.nl)",
   "private": true,
   "scripts": {
@@ -18,18 +18,13 @@
     "proxy": "ngrok http 3000"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "2.0.2",
-    "@nuxtjs/proxy": "1.2.4",
-    "@nuxtjs/pwa": "^2.0.8",
     "@nuxtjs/sitemap": "0.1.1",
     "axios": "0.18.0",
     "datocms-client": "0.5.2",
     "dotenv": "5.0.1",
     "lodash": "4.17.10",
     "normalize.css": "8.0.0",
-    "nuxt": "1.4.1",
-    "request": "2.87.0",
-    "request-promise-native": "^1.0.5"
+    "nuxt": "1.4.1"
   },
   "devDependencies": {
     "ajv": "6.5.0",
