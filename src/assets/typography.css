@@ -1,0 +1,94 @@
+html {
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--font-size-default);
+    color: var(--grey-dark);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, p, ul, ol,
+.h1, .h2, .h3, .h4 {
+    margin: 0 0 var(--spacing-default) 0;
+}
+
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4 {
+    font-family: var(--font-header);
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+h1, .h1 {
+    font-size: var(--font-size-large);
+}
+
+h2, .h2 {
+    margin: calc(var(--spacing-default) * 1.5) 0 var(--spacing-half) 0;
+    font-size: var(--font-size-big);
+}
+
+h3, .h3 {
+    margin: calc(var(--spacing-default) * 1.5) 0  var(--spacing-half) 0;
+    font-size:  var(--font-size-bigger);
+}
+
+h4, .h4 {
+    margin: calc(var(--spacing-default) * 1.5) 0  var(--spacing-half) 0;
+    font-size: 1.1rem;
+}
+
+h5, .h5 {
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: var(--font-size-default);
+}
+
+h6, .h6 {
+    font-family: var(--font);
+    font-style: italic;
+    font-weight: normal;
+    font-size: var(--font-size-default);
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+ul li {
+    padding-left: .8rem;
+}
+
+ol {
+    padding: 0;
+    counter-reset: item;
+}
+
+ol li {
+    display: block;
+    position: relative;
+    padding-left: var(--spacing-double);
+}
+
+ol li:before {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: var(--spacing-double);
+    content: counter(item) ". ";
+    counter-increment: item;
+}
+
+a {
+    padding-bottom: .15rem;
+    background: transparent linear-gradient(to bottom, transparent 93%, var(--grey-dark) 100%, var(--grey-dark) 100%);
+    text-decoration: none;
+    color: var(--grey-dark);
+}
