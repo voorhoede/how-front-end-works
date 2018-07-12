@@ -1,4 +1,8 @@
 :root {
   /* COLOURS */
   --white: #fff;
+  --grey-light: #fafafa;
+
+  /* SPACING */
+  --spacing-default: 1rem;
 }

@@ -1,5 +1,11 @@
 <template>
-  <Header />
+  <div>
+    <Header />
+
+    <div class="center-column">
+      content
+    </div>
+  </div>
 </template>
 
 <script>
