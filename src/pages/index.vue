@@ -5,16 +5,18 @@
     <div class="center-column">
       content
     </div>
+
+    <Footer :body=content.footer />
   </div>
 </template>
 
 <script>
 import index from '~/static/data/index.json'
 import seoHead from '~/assets/seo-head'
-import { Header } from '~/components'
+import { Footer, Header } from '~/components'
 
 export default {
-  components: { Header },
+  components: { Footer, Header },
   data() {
     return {
       content: index
