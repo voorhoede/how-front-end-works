@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header :title=content.title :description=content.introduction :backgroundColor=content.headerColor />
 
     <div class="center-column">
       content
@@ -15,7 +15,12 @@ import { Header } from '~/components'
 
 export default {
   components: { Header },
-  head () {
+  data() {
+    return {
+      content: index
+    }
+  },
+  head() {
     return seoHead(index.seo)
   }
 }

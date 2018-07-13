@@ -1,9 +1,56 @@
 <template>
-  <header class="header">
-    Header
+  <header class="header" :style="`background-color: ${backgroundColor};`">
+    <div class="center-column">
+      <h1 class="header__title">{{ title }}</h1>
+      <p class="header__description">{{ description }}</p>
+    </div>
   </header>
 </template>
 
+<script>
+export default {
+  props: ['backgroundColor', 'description', 'title']
+}
+</script>
+
 <style scoped>
 @import '~assets/core.css';
+
+.header {
+  margin-bottom: var(--spacing-default);
+  padding: var(--spacing-default);
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .header {
+    margin-bottom: var(--spacing-double);
+    padding: calc(var(--spacing-double) * 2) 0;
+  }
+}
+
+.header__title {
+  margin-bottom: var(--spacing-half);
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--font-size-large);
+}
+
+@media (min-width: 600px) {
+  .header__title {
+    font-size: 2.5rem;
+  }
+}
+
+.header__description {
+  line-height: 1.5;
+}
+
+@media (min-width: 600px) {
+  .header__description {
+    font-size: var(--font-size-bigger);
+  }
+}
+
 </style>
