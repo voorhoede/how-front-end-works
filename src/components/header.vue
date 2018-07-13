@@ -18,7 +18,7 @@ export default {
 
 .header {
   margin-bottom: var(--spacing-default);
-  padding: var(--spacing-default);
+  padding: var(--spacing-double);
   text-align: center;
 }
 
@@ -44,6 +44,7 @@ export default {
 }
 
 .header__description {
+  margin-bottom: 0;
   line-height: 1.5;
 }
 
@@ -52,5 +53,4 @@ export default {
     font-size: var(--font-size-bigger);
   }
 }
-
 </style>
