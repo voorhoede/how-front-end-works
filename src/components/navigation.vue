@@ -7,20 +7,6 @@
           {{ concept.name }}
         </a>
       </li>
-
-      <li class="navigation__item">
-        <a href="#">
-          <ConceptIcon backgroundColor="goldenrod" imageUrl="https://www.datocms-assets.com/6398/1531734489-1531209926-icon-accessibility.svg" />
-          Server side rendering used as a really long name
-        </a>
-      </li>
-
-      <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
-        <a :href="'#' + concept.slug">
-          <ConceptIcon :backgroundColor=concept.color :imageUrl=concept.icon />
-          {{ concept.name }}
-        </a>
-      </li>
     </ul>
   </nav>
 </template>
