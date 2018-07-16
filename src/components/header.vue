@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <Navigation v-if="concepts" :concepts=concepts />
+    <Navigation v-if="concepts" :concepts="concepts" />
   </header>
 </template>
 

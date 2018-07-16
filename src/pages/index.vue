@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Header :backgroundColor=content.headerColor
-            :concepts=content.concepts
-            :description=content.introduction
-            :title=content.title />
+    <Header :backgroundColor="content.headerColor"
+            :concepts="content.concepts"
+            :description="content.introduction"
+            :title="content.title" />
 
     <div class="center-column">
       content
     </div>
 
-    <Footer :body=content.footer />
+    <Footer :body="content.footer" />
   </div>
 </template>
 

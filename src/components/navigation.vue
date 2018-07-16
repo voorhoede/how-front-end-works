@@ -3,7 +3,7 @@
     <ul class="flat-list">
       <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
         <a :href="'#' + concept.slug">
-          <ConceptIcon :backgroundColor=concept.color :imageUrl=concept.icon />
+          <ConceptIcon :backgroundColor="concept.color" :imageUrl="concept.icon" />
           {{ concept.name }}
         </a>
       </li>
