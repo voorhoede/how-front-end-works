@@ -1,7 +1,8 @@
 :root {
   /* COLOURS */
   --white: #fff;
-  --grey-dark: #4a4a4a;
+  --grey-dark: #3d3d3d;
+  --grey-medium: #d3d3d3;
   --grey-light: #fafafa;
 
   /* SPACING */

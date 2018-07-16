@@ -1,15 +1,22 @@
 <template>
-  <header class="header" :style="`background-color: ${backgroundColor};`">
-    <div class="center-column">
-      <h1 class="header__title">{{ title }}</h1>
-      <p class="header__description">{{ description }}</p>
+  <header>
+    <div class="header" :style="`background-color: ${backgroundColor};`">
+      <div class="center-column">
+        <h1 class="header__title">{{ title }}</h1>
+        <p class="header__description">{{ description }}</p>
+      </div>
     </div>
+
+    <Navigation v-if="concepts" :concepts=concepts />
   </header>
 </template>
 
 <script>
+import Navigation from '~/components/navigation'
+
 export default {
-  props: ['backgroundColor', 'description', 'title']
+  components: { Navigation },
+  props: ['backgroundColor', 'concepts', 'description', 'title']
 }
 </script>
 

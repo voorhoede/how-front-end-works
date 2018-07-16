@@ -92,6 +92,16 @@ ol li:before {
     counter-increment: item;
 }
 
+.flat-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.flat-list li {
+    padding: 0;
+}
+
 a {
     padding-bottom: .15rem;
     background: transparent linear-gradient(to bottom, transparent 93%, var(--grey-dark) 100%, var(--grey-dark) 100%);

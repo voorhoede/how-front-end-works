@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header :title=content.title :description=content.introduction :backgroundColor=content.headerColor />
+    <Header :backgroundColor=content.headerColor
+            :concepts=content.concepts
+            :description=content.introduction
+            :title=content.title />
 
     <div class="center-column">
       content
