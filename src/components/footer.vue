@@ -14,17 +14,17 @@ export default {
 @import '~assets/core.css';
 
 .footer {
-    font-size: var(--font-size-default);
-    text-align: center;
+  font-size: var(--font-size-default);
+  text-align: center;
 }
 
 @media (min-width: 600px) {
-    .footer {
-        font-size: var(--font-size-smaller);
-    }
+  .footer {
+    font-size: var(--font-size-smaller);
+  }
 }
 
 .footer >>> p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 </style>
