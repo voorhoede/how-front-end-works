@@ -16,7 +16,8 @@
 <script>
 import index from '~/static/data/index.json'
 import seoHead from '~/assets/seo-head'
-import { Footer, Header } from '~/components'
+import Footer from '~/components/footer'
+import Header from '~/components/header'
 
 export default {
   components: { Footer, Header },
