@@ -64,11 +64,4 @@ export default {
   width: 3rem;
   height: 3rem;
 }
-
-@media (min-width: 600px) {
-  .navigation .concept-icon {
-    width: 4rem;
-    height: 4rem;
-  }
-}
 </style>

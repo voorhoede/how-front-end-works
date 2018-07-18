@@ -8,7 +8,7 @@ html {
 
 body {
     font-family: var(--font);
-    font-size: var(--font-size-bigger);
+    font-size: var(--font-size-default);
     color: var(--grey-dark);
     line-height: 1.7;
 }
@@ -19,8 +19,8 @@ body {
     }
 }
 
-h1, h2, h3, h4, p, ul, ol,
-.h1, .h2, .h3, .h4 {
+h1, h2, h3, h4, h5, h6, ul, ol,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     margin: 0 0 var(--spacing-default) 0;
 }
 
@@ -37,27 +37,30 @@ h1, .h1 {
 }
 
 h2, .h2 {
-    margin: calc(var(--spacing-default) * 1.5) 0 var(--spacing-half) 0;
+    margin: 0 0 var(--spacing-half) 0;
     font-size: var(--font-size-big);
 }
 
 h3, .h3 {
-    margin: calc(var(--spacing-default) * 1.5) 0  var(--spacing-half) 0;
+    margin: 0 0 var(--spacing-half) 0;
     font-size:  var(--font-size-bigger);
 }
 
 h4, .h4 {
-    margin: calc(var(--spacing-default) * 1.5) 0  var(--spacing-half) 0;
+    margin: 0 0 var(--spacing-half) 0;
     font-size: 1.1rem;
 }
 
 h5, .h5 {
+    margin: 0 0 var(--spacing-half) 0;
     font-family: var(--font);
+    font-style: normal;
     font-weight: bold;
     font-size: var(--font-size-default);
 }
 
 h6, .h6 {
+    margin: 0 0 var(--spacing-half) 0;
     font-family: var(--font);
     font-style: italic;
     font-weight: normal;
@@ -100,6 +103,14 @@ ol li:before {
 
 .flat-list li {
     padding: 0;
+}
+
+p {
+    margin-bottom: var(--spacing-half);
+}
+
+p:last-child {
+    margin-bottom: 0;
 }
 
 a {
