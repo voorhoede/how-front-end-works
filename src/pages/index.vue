@@ -37,4 +37,14 @@ export default {
 
 <style scoped>
 @import '~assets/core.css';
+
+.concept {
+  margin-bottom: calc(var(--spacing-default) * 3);
+}
+
+@media (min-width: 600px) {
+  .concept {
+    margin-bottom: calc(var(--spacing-default) * 6);
+  }
+}
 </style>

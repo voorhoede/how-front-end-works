@@ -30,7 +30,7 @@ export default {
 
 @media (min-width: 600px) {
   .navigation {
-    margin-bottom: var(--spacing-double);
+    margin-bottom: calc(var(--spacing-default) * 3);
     padding-bottom: var(--spacing-default);
   }
 

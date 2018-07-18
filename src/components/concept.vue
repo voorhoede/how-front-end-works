@@ -18,25 +18,24 @@
         <Label :labelInfo="lemma" />
       </li>
     </ul>
+
+    <JumpToTop />
   </section>
 </template>
 
 <script>
 import ConceptIcon from '~/components/concept-icon'
+import JumpToTop from '~/components/jump-to-top'
 import Label from '~/components/label'
 
 export default {
-  components: { ConceptIcon, Label },
+  components: { ConceptIcon, JumpToTop, Label },
   props: ['concept']
 }
 </script>
 
 <style scoped>
 @import '~assets/core.css';
-
-.concept {
-  margin-bottom: 4rem;
-}
 
 .concept__title {
   display: flex;
