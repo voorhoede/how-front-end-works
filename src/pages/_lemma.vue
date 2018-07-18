@@ -1,14 +1,11 @@
 <template>
   <div>
     <Header :backgroundColor="content.headerColor"
-            :concepts="content.concepts"
             :description="content.introduction"
             :title="content.title" />
 
     <main class="center-column">
-      <Concept v-for="concept in content.concepts"
-               :concept="concept"
-               :key="concept.name" />
+      <Lemma :lemma="content" />
     </main>
 
     <Footer :body="content.footer" />
@@ -16,14 +13,14 @@
 </template>
 
 <script>
-import index from '~/static/data/index.json'
+import index from '~/static/data/a11y.json'
 import seoHead from '~/assets/seo-head'
-import Concept from '~/components/concept'
 import Footer from '~/components/footer'
 import Header from '~/components/header'
+import Lemma from '~/components/lemma'
 
 export default {
-  components: { Concept, Footer, Header },
+  components: { Footer, Header, Lemma },
   data() {
     return {
       content: index
@@ -37,14 +34,4 @@ export default {
 
 <style scoped>
 @import '~assets/core.css';
-
-.concept {
-  margin-bottom: calc(var(--spacing-default) * 3);
-}
-
-@media (min-width: 600px) {
-  .concept {
-    margin-bottom: calc(var(--spacing-default) * 6);
-  }
-}
 </style>
