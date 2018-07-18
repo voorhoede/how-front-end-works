@@ -14,6 +14,7 @@ export default {
 @import '~assets/core.css';
 
 .footer {
+  margin-bottom: var(--spacing-double);
   font-size: var(--font-size-default);
   text-align: center;
 }
