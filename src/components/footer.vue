@@ -15,14 +15,8 @@ export default {
 
 .footer {
   margin-bottom: var(--spacing-double);
-  font-size: var(--font-size-default);
+  font-size: var(--font-size-smaller);
   text-align: center;
-}
-
-@media (min-width: 600px) {
-  .footer {
-    font-size: var(--font-size-smaller);
-  }
 }
 
 .footer >>> p {
