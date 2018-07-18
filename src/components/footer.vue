@@ -21,7 +21,7 @@ export default {
 
 @media (min-width: 600px) {
   .footer {
-    font-size: var(--font-size-smaller);
+    font-size: var(--font-size-small);
   }
 }
 

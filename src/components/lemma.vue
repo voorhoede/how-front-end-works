@@ -1,7 +1,5 @@
 <template>
   <div class="lemma">
-    [back to overview]
-
     <img v-if="lemma.image" class="lemma__image" :src="lemma.image" alt="">
 
     <h2 class="lemma__title h1">{{ lemma.name }}</h2>
