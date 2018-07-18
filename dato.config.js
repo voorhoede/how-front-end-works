@@ -51,7 +51,8 @@ function generateLemmas(dato, root, i18n) {
         return {
           color: relatedConcept.color.hex,
           icon: relatedConcept.icon.url(),
-          name: relatedConcept.name
+          name: relatedConcept.name,
+          slug: `/#${relatedConcept.slug}`
         }
       }),
       description: lemma.description,

@@ -1,8 +1,6 @@
 <template>
   <header>
-    <a id="top"></a>
-
-    <div class="header" :style="`background-color: ${backgroundColor};`">
+    <div id="top" class="header" :style="`background-color: ${backgroundColor};`">
       <div class="center-column">
         <h1 class="header__title">{{ title }}</h1>
         <p class="header__description">{{ description }}</p>

@@ -1,8 +1,6 @@
 <template>
   <section class="concept">
-    <a :id="concept.slug"></a>
-
-    <img class="concept__image" :src="concept.image" alt="">
+    <img :id="concept.slug" class="concept__image" :src="concept.image" alt="">
 
     <h2 class="concept__title h1">
       <ConceptIcon :backgroundColor="concept.color" :imageUrl="concept.icon" />

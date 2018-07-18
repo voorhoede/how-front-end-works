@@ -39,7 +39,7 @@ export default {
 @import '~assets/core.css';
 
 .lemma {
-  margin-bottom: var(--spacing-double);
+  margin-bottom: var(--spacing-default);
   padding-bottom: var(--spacing-half);
   border-bottom: 1px solid var(--grey-medium);
 }
