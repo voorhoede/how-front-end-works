@@ -15,7 +15,7 @@ export default {
 
 .footer {
   margin-bottom: var(--spacing-double);
-  font-size: var(--font-size-smaller);
+  font-size: var(--font-size-small);
   text-align: center;
 }
 

@@ -51,11 +51,15 @@ function generateLemmas(dato, root, i18n) {
         return {
           color: relatedConcept.color.hex,
           icon: relatedConcept.icon.url(),
-          name: relatedConcept.name
+          name: relatedConcept.name,
+          slug: `/#${relatedConcept.slug}`
         }
       }),
       description: lemma.description,
+      footer: dato.siteInfo.footer,
+      headerColor: dato.siteInfo.headerColor.hex,
       image: lemma.image ? lemma.image.url() : '',
+      introduction: dato.siteInfo.introduction,
       name: lemma.name,
       relatedLemmas: lemma.relatedLemmas.map(relatedLemma => {
         return {
@@ -73,7 +77,8 @@ function generateLemmas(dato, root, i18n) {
           width: lemma.seo.image ? lemma.seo.image.width : ''
         }
       },
-      slug: lemma.slug
+      slug: lemma.slug,
+      title: dato.siteInfo.title
     });
   });
 }

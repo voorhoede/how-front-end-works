@@ -20,7 +20,7 @@
   width: 2rem;
   height: 2rem;
   transform: translateY(50%);
-  background-image: url('/icons/arrow-up.svg');
+  background-image: url('/icons/arrow.svg');
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
