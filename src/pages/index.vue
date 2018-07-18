@@ -5,9 +5,11 @@
             :description="content.introduction"
             :title="content.title" />
 
-    <div class="center-column">
-      content
-    </div>
+    <main class="center-column">
+      <Concept v-for="concept in content.concepts"
+               v-bind:concept="concept"
+               v-bind:key="concept.name" />
+    </main>
 
     <Footer :body="content.footer" />
   </div>
@@ -16,11 +18,12 @@
 <script>
 import index from '~/static/data/index.json'
 import seoHead from '~/assets/seo-head'
+import Concept from '~/components/concept'
 import Footer from '~/components/footer'
 import Header from '~/components/header'
 
 export default {
-  components: { Footer, Header },
+  components: { Concept, Footer, Header },
   data() {
     return {
       content: index
@@ -34,4 +37,14 @@ export default {
 
 <style scoped>
 @import '~assets/core.css';
+
+.concept {
+  margin-bottom: calc(var(--spacing-default) * 3);
+}
+
+@media (min-width: 600px) {
+  .concept {
+    margin-bottom: calc(var(--spacing-default) * 6);
+  }
+}
 </style>

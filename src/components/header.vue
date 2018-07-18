@@ -1,5 +1,7 @@
 <template>
   <header>
+    <a id="top"></a>
+
     <div class="header" :style="`background-color: ${backgroundColor};`">
       <div class="center-column">
         <h1 class="header__title">{{ title }}</h1>

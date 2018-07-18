@@ -30,7 +30,7 @@ export default {
 
 @media (min-width: 600px) {
   .navigation {
-    margin-bottom: var(--spacing-double);
+    margin-bottom: calc(var(--spacing-default) * 3);
     padding-bottom: var(--spacing-default);
   }
 
@@ -63,12 +63,5 @@ export default {
   margin-right: var(--spacing-default);
   width: 3rem;
   height: 3rem;
-}
-
-@media (min-width: 600px) {
-  .navigation .concept-icon {
-    width: 4rem;
-    height: 4rem;
-  }
 }
 </style>
