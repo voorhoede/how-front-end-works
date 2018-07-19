@@ -14,9 +14,9 @@
       </li>
     </ul>
 
-    <h3 class="h5">See also:</h3>
+    <h3 v-if="lemma.relatedLemmas.length > 0" class="h5">See also:</h3>
 
-    <ul class="lemma__labels flat-list">
+    <ul v-if="lemma.relatedLemmas.length > 0" class="lemma__labels flat-list">
       <li v-for="relatedLemma in lemma.relatedLemmas" :key="relatedLemma.slug">
         <Label :labelInfo="relatedLemma" />
       </li>
