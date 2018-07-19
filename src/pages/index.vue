@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import index from '~/static/data/index.json'
-import seoHead from '~/assets/seo-head'
+import page from '~/static/data/index.json'
+import seoHead from '~/lib/seo-head'
 import Concept from '~/components/concept'
 import Footer from '~/components/footer'
 import Header from '~/components/header'
@@ -26,11 +26,11 @@ export default {
   components: { Concept, Footer, Header },
   data() {
     return {
-      content: index
+      content: page
     }
   },
   head() {
-    return seoHead(index.seo)
+    return seoHead(this.content.seo)
   }
 }
 </script>

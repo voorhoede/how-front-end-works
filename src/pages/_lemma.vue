@@ -1,22 +1,22 @@
 <template>
   <div>
-    <Header :backgroundColor="content.headerColor"
-            :description="content.introduction"
-            :title="content.title" />
+    <Header :backgroundColor="page.headerColor"
+            :description="page.introduction"
+            :title="page.title" />
 
     <main class="center-column">
       <BackButton />
 
-      <Lemma :lemma="content" />
+      <Lemma :lemma="page" />
     </main>
 
-    <Footer :body="content.footer" />
+    <Footer :body="page.footer" />
   </div>
 </template>
 
 <script>
-import index from '~/static/data/a11y.json'
-import seoHead from '~/assets/seo-head'
+import getPageData from '~/lib/get-page-data'
+import seoHead from '~/lib/seo-head'
 import BackButton from '~/components/back-button'
 import Footer from '~/components/footer'
 import Header from '~/components/header'
@@ -24,13 +24,13 @@ import Lemma from '~/components/lemma'
 
 export default {
   components: { BackButton, Footer, Header, Lemma },
-  data() {
-    return {
-      content: index
-    }
+  async asyncData({ params }) {
+    const { lemma } = params
+    const page = await getPageData({ lemma })
+    return { page }
   },
   head() {
-    return seoHead(index.seo)
+    return seoHead(this.page.seo)
   }
 }
 </script>

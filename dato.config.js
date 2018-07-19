@@ -42,7 +42,7 @@ function generateIndex(dato, root, i18n) {
 
 function generateLemmas(dato, root, i18n) {
   dato.lemmata.forEach(lemma => {
-    root.createDataFile(`${dataDir}${lemma.slug}.json`, 'json', {
+    root.createDataFile(`${dataDir}lemmas/${lemma.slug}.json`, 'json', {
       concepts: dato.concepts.filter(concept => {
         return concept.lemmas.some(conceptLemma => {
           return conceptLemma.id === lemma.id
