@@ -17,7 +17,6 @@
 
 <script>
 import getPageData from '../lib/get-page-data'
-import page from '../static/data/index.json'
 import seoHead from '../lib/seo-head'
 import Concept from '../components/concept'
 import Footer from '../components/footer'
