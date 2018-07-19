@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import ConceptIcon from '~/components/concept-icon'
-import JumpToTop from '~/components/jump-to-top'
-import Label from '~/components/label'
+import ConceptIcon from '../components/concept-icon'
+import JumpToTop from '../components/jump-to-top'
+import Label from '../components/label'
 
 export default {
   components: { ConceptIcon, JumpToTop, Label },
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 
 .concept__title {
   display: flex;

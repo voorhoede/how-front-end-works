@@ -7,7 +7,7 @@
 </template>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 
 .jump-to-top {
   border-bottom: 1px solid var(--grey-medium);

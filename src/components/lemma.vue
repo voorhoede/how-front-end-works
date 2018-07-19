@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Label from '~/components/label'
+import Label from '../components/label'
 
 export default {
   components: { Label },
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 
 .lemma {
   margin-bottom: var(--spacing-default);

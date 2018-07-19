@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import getPageData from '~/lib/get-page-data'
-import seoHead from '~/lib/seo-head'
-import BackButton from '~/components/back-button'
-import Footer from '~/components/footer'
-import Header from '~/components/header'
-import Lemma from '~/components/lemma'
+import getPageData from '../lib/get-page-data'
+import seoHead from '../lib/seo-head'
+import BackButton from '../components/back-button'
+import Footer from '../components/footer'
+import Header from '../components/header'
+import Lemma from '../components/lemma'
 
 export default {
   components: { BackButton, Footer, Header, Lemma },

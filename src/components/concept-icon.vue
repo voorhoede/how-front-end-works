@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 
 .concept-icon {
   display: flex;
