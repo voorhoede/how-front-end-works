@@ -26,7 +26,7 @@ export default {
   components: { BackButton, Footer, Header, Lemma },
   async asyncData({ params }) {
     const { lemma } = params
-    const page = await getPageData({ lemma })
+    const page = await getPageData(`lemmas/${ lemma }`)
     return { page }
   },
   head() {
@@ -36,5 +36,5 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 </style>
