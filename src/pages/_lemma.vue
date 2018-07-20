@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import index from '~/static/data/a11y.json'
-import seoHead from '~/assets/seo-head'
-import BackButton from '~/components/back-button'
-import Footer from '~/components/footer'
-import Header from '~/components/header'
-import Lemma from '~/components/lemma'
+import index from '../static/data/a11y.json'
+import seoHead from '../assets/seo-head'
+import BackButton from '../components/back-button'
+import Footer from '../components/footer'
+import Header from '../components/header'
+import Lemma from '../components/lemma'
 
 export default {
   components: { BackButton, Footer, Header, Lemma },
@@ -36,5 +36,5 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 </style>

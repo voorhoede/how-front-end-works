@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Navigation from '~/components/navigation'
+import Navigation from '../components/navigation'
 
 export default {
   components: { Navigation },
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/variables.css';
 
 .header {
   margin-bottom: var(--spacing-default);

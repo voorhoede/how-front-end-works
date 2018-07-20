@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import index from '~/static/data/index.json'
-import seoHead from '~/assets/seo-head'
-import Concept from '~/components/concept'
-import Footer from '~/components/footer'
-import Header from '~/components/header'
+import index from '../static/data/index.json'
+import seoHead from '../assets/seo-head'
+import Concept from '../components/concept'
+import Footer from '../components/footer'
+import Header from '../components/header'
 
 export default {
   components: { Concept, Footer, Header },
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 
 .concept {
   margin-bottom: calc(var(--spacing-default) * 3);
