@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/core.css';
+@import '../assets/variables.css';
 
 .label {
   display: flex;

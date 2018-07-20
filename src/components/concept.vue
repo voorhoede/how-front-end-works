@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/core.css';
+@import '../assets/variables.css';
 
 .concept__title {
   display: flex;

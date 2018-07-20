@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/core.css';
+@import '../assets/variables.css';
 
 .lemma {
   margin-bottom: var(--spacing-default);
