@@ -44,6 +44,7 @@ module.exports = {
 
   build: {
     postcss: [
+      require('postcss-import')(),
       require('postcss-custom-properties')()
     ],
     vendor: [

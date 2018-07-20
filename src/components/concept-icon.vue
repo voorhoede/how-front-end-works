@@ -11,8 +11,6 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
-
 .concept-icon {
   display: flex;
   justify-content: center;

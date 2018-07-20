@@ -1,4 +1,4 @@
-export default function seoHead (seo) {
+export default function (seo) {
   const { image } = seo
   return {
     title: seo.title,

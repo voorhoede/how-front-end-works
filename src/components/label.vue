@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import ConceptIcon from '~/components/concept-icon'
+import ConceptIcon from '../components/concept-icon'
 
 export default {
   components: { ConceptIcon },
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/variables.css';
 
 .label {
   display: inline-block;

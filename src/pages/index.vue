@@ -1,42 +1,41 @@
 <template>
   <div>
-    <Header :backgroundColor="content.headerColor"
-            :concepts="content.concepts"
-            :description="content.introduction"
-            :title="content.title" />
+    <Header :backgroundColor="page.headerColor"
+            :concepts="page.concepts"
+            :description="page.introduction"
+            :title="page.title" />
 
     <main class="center-column">
-      <Concept v-for="concept in content.concepts"
+      <Concept v-for="concept in page.concepts"
                :concept="concept"
                :key="concept.name" />
     </main>
 
-    <Footer :body="content.footer" />
+    <Footer :body="page.footer" />
   </div>
 </template>
 
 <script>
-import index from '~/static/data/index.json'
-import seoHead from '~/assets/seo-head'
-import Concept from '~/components/concept'
-import Footer from '~/components/footer'
-import Header from '~/components/header'
+import getPageData from '../lib/get-page-data'
+import seoHead from '../lib/seo-head'
+import Concept from '../components/concept'
+import Footer from '../components/footer'
+import Header from '../components/header'
 
 export default {
   components: { Concept, Footer, Header },
-  data() {
-    return {
-      content: index
-    }
+  async asyncData() {
+    const page = await getPageData('index')
+    return { page }
   },
   head() {
-    return seoHead(index.seo)
+    return seoHead(this.page.seo)
   }
 }
 </script>
 
 <style scoped>
-@import '~assets/core.css';
+@import '../assets/core.css';
 
 .concept {
   margin-bottom: calc(var(--spacing-default) * 3);
