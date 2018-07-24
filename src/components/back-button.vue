@@ -1,11 +1,15 @@
 <template>
   <a class="back-button" href="/">
-    Back to overview
+    <ArrowIcon class="back-button__icon" />
+    <span class="back-button__content">Back to overview</span>
   </a>
 </template>
 
 <script>
+import ArrowIcon from '~/static/icons/arrow.svg'
+
 export default {
+  components: { ArrowIcon },
   props: ['label, url']
 }
 </script>
@@ -21,14 +25,54 @@ export default {
   font-size: var(--font-size-smaller);
 }
 
-.back-button:before {
-  content: '';
+.back-button__icon {
   display: inline-block;
   transform: rotate(-90deg);
   margin-right: var(--spacing-half);
-  width: 1.2rem;
-  height: 1.2rem;
-  background: url('/icons/arrow.svg') center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  fill: var(--grey-medium--highlight);
+  transition: fill .15s linear;
+}
+
+.back-button:hover,
+.back-button:focus {
+  outline: none;
+}
+
+.back-button:hover .back-button__icon,
+.back-button:focus .back-button__icon {
+  fill: var(--grey-dark);
+  transition: fill .15s linear;
+  animation: bounce-arrow .25s ease-in-out;
+}
+
+.back-button:hover .back-button__content,
+.back-button:focus .back-button__content {
+  padding-bottom: 0;
+  background: transparent linear-gradient(to bottom, transparent 93%, var(--grey-dark) 100%, var(--grey-dark) 100%);
+}
+
+@keyframes bounce-arrow {
+  0% {
+    margin-left: 0;
+    margin-right: var(--spacing-half);
+  }
+  50% {
+    margin-left: -3px;
+    margin-right: calc(var(--spacing-half) + 3px);
+  }
+  100% {
+    margin-left: 0;
+    margin-right: var(--spacing-half);
+  }
+}
+
+@media (min-width: 600px) {
+  .back-button__icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
 
 @media (min-width: 920px) {
@@ -39,8 +83,20 @@ export default {
     margin-left: -140px;
   }
 
-  .back-button:before {
+  .back-button__icon {
     margin-right: 0;
+  }
+
+  @keyframes bounce-arrow {
+    0% {
+      margin-right: 0;
+    }
+    50% {
+      margin-right: 3px;
+    }
+    100% {
+      margin-right: 0;
+    }
   }
 }
 </style>
