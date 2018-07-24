@@ -21,6 +21,7 @@ export default {
 
 .label {
   display: inline-block;
+  border: none;
   border-radius: 30px;
 }
 

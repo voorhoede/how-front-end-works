@@ -21,8 +21,10 @@ export default {
   display: inline-flex;
   align-items: center;
   margin-bottom: var(--spacing-default);
+  padding-bottom: 0;
   background: none;
   font-size: var(--font-size-smaller);
+  border: none;
 }
 
 .back-button__icon {
@@ -50,7 +52,6 @@ export default {
 .back-button:hover .back-button__content,
 .back-button:focus .back-button__content {
   padding-bottom: 0;
-  background: transparent linear-gradient(to bottom, transparent 93%, var(--grey-dark) 100%, var(--grey-dark) 100%);
 }
 
 @keyframes bounce-arrow {

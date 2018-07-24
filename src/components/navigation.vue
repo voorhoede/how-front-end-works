@@ -56,6 +56,7 @@ export default {
   align-items: center;
   background: none;
   line-height: 1.4;
+  border: none;
 }
 
 .navigation .concept-icon {
