@@ -1,10 +1,10 @@
 <template>
-  <a class="label" :href="labelInfo.slug" :style="`background: ${labelInfo.color};`">
+  <nuxt-link class="label" :to="labelInfo.slug" :style="`background: ${labelInfo.color};`">
     <div class="label__test">
       <ConceptIcon v-if="labelInfo.icon" :imageUrl="labelInfo.icon" />
       {{ labelInfo.name }}
     </div>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>

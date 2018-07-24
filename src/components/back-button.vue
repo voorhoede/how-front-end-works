@@ -1,8 +1,8 @@
 <template>
-  <a class="back-button" href="/">
+  <nuxt-link class="back-button" to="/">
     <ArrowIcon class="back-button__icon" />
     <span class="back-button__content">Back to overview</span>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>
