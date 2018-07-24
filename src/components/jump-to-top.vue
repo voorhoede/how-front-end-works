@@ -2,7 +2,7 @@
   <div class="jump-to-top">
     <a class="jump-to-top__button" href="#top">
       <ArrowIcon class="jump-to-top__icon" />
-      <span class="jump-to-top__content">Jump to top of page</span>
+      <span class="a11y-sr-only">Jump to top of page</span>
     </a>
   </div>
 </template>
@@ -23,7 +23,10 @@ export default {
 }
 
 .jump-to-top__button {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   width: 2rem;
   height: 2rem;
@@ -35,9 +38,8 @@ export default {
 }
 
 .jump-to-top__icon {
-  margin-top: 7px;
-  margin-left: 7px;
-  width: 50%;
+  width: 1rem;
+  height: 1.1srem;
   fill: var(--grey-medium--highlight);
   transition: fill .15s linear;
 }
@@ -58,20 +60,13 @@ export default {
 
 @keyframes bounce-arrow {
   0% {
-    margin-top: 7px;
+    transform: translateY(0);
   }
   50% {
-    margin-top: 4px;
+    transform: translateY(-2px);
   }
   100% {
-    margin-top: 7px;
+    transform: translateY(0);
   }
-}
-
-.jump-to-top__content {
-  display: block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
 }
 </style>
