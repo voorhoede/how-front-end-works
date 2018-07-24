@@ -37,9 +37,15 @@ export default {
   transition: fill .15s linear;
 }
 
+.back-button__content,
+.back-button__content {
+  border-bottom: 1px solid transparent;
+}
+
 .back-button:hover,
 .back-button:focus {
   outline: none;
+  border: none;
 }
 
 .back-button:hover .back-button__icon,
@@ -52,6 +58,7 @@ export default {
 .back-button:hover .back-button__content,
 .back-button:focus .back-button__content {
   padding-bottom: 0;
+  border-bottom: 1px solid var(--grey-dark);
 }
 
 @keyframes bounce-arrow {

@@ -59,6 +59,11 @@ export default {
   border: none;
 }
 
+.navigation__content,
+.navigation__content {
+  border-bottom: 1px solid transparent;
+}
+
 .navigation__item a:hover .navigation__content,
 .navigation__item a:focus .navigation__content {
   border-bottom: 1px solid var(--grey-dark);
