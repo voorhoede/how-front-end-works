@@ -4,7 +4,7 @@
       <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
         <a :href="'#' + concept.slug">
           <ConceptIcon :backgroundColor="concept.color" :imageUrl="concept.icon" />
-          {{ concept.name }}
+          <span class="navigation__content">{{ concept.name }}</span>
         </a>
       </li>
     </ul>
@@ -56,6 +56,17 @@ export default {
   align-items: center;
   background: none;
   line-height: 1.4;
+  border: none;
+}
+
+.navigation__content,
+.navigation__content {
+  border-bottom: 1px solid transparent;
+}
+
+.navigation__item a:hover .navigation__content,
+.navigation__item a:focus .navigation__content {
+  border-bottom: 1px solid var(--grey-dark);
 }
 
 .navigation .concept-icon {

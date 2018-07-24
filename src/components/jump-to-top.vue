@@ -1,10 +1,19 @@
 <template>
   <div class="jump-to-top">
     <a class="jump-to-top__button" href="#top">
-      Jump to top of page
+      <ArrowIcon class="jump-to-top__icon" />
+      <span class="a11y-sr-only">Jump to top of page</span>
     </a>
   </div>
 </template>
+
+<script>
+import ArrowIcon from '~/static/icons/arrow.svg'
+
+export default {
+  components: { ArrowIcon }
+}
+</script>
 
 <style scoped>
 @import '../assets/variables.css';
@@ -14,20 +23,50 @@
 }
 
 .jump-to-top__button {
-  overflow: hidden;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   width: 2rem;
   height: 2rem;
   transform: translateY(50%);
-  background-image: url('/icons/arrow.svg');
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--grey-light);
+  background: var(--grey-light);
   border: 1px solid var(--grey-medium);
   border-radius: 50%;
-  text-indent: 100%;
-  white-space: nowrap;
+  transition: border-color .15s linear;
+}
+
+.jump-to-top__icon {
+  width: 1rem;
+  height: 1.1srem;
+  fill: var(--grey-medium--highlight);
+  transition: fill .15s linear;
+}
+
+.jump-to-top__button:hover,
+.jump-to-top__button:focus {
+  outline: none;
+  border-color: var(--grey-dark);
+  transition: border-color .15s linear;
+}
+
+.jump-to-top__button:hover .jump-to-top__icon,
+.jump-to-top__button:focus .jump-to-top__icon {
+  animation: bounce-arrow .25s ease-in-out;
+  transition: fill .15s linear;
+  fill: var(--grey-dark);
+}
+
+@keyframes bounce-arrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="concept-icon" :style="`background-color: ${backgroundColor};`">
+  <div class="concept-icon" :style="backgroundColor ? `background-color: ${backgroundColor};` : ''">
     <img class="concept-icon__image" :src="imageUrl" alt="">
   </div>
 </template>

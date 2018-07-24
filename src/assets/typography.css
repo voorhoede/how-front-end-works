@@ -115,7 +115,13 @@ p:last-child {
 
 a {
     padding-bottom: .15rem;
-    background: transparent linear-gradient(to bottom, transparent 93%, var(--grey-dark) 100%, var(--grey-dark) 100%);
     text-decoration: none;
     color: var(--grey-dark);
+    border-bottom: 1px dotted var(--grey-dark);
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    border-bottom: 1px solid var(--grey-dark);
 }
