@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation center-column">
+  <nav class="navigation center-column" role="navigation">
     <ul class="flat-list">
       <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
         <a :href="'#' + concept.slug">

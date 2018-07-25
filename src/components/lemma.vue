@@ -1,12 +1,12 @@
 <template>
-  <div class="lemma">
+  <section class="lemma">
     <img v-if="lemma.image" class="lemma__image" :src="lemma.image" alt="">
 
     <h2 class="lemma__title h1">{{ lemma.name }}</h2>
 
     <div class="lemma__description" v-html="lemma.description"></div>
 
-    <h3 class="h5">Part of:</h3>
+    <h3 class="h5">Part of</h3>
 
     <ul class="lemma__labels flat-list">
       <li v-for="concept in lemma.concepts" :key="concept.slug">
@@ -14,14 +14,14 @@
       </li>
     </ul>
 
-    <h3 v-if="lemma.relatedLemmas.length > 0" class="h5">See also:</h3>
+    <h3 v-if="lemma.relatedLemmas.length > 0" class="h5">See also</h3>
 
     <ul v-if="lemma.relatedLemmas.length > 0" class="lemma__labels flat-list">
       <li v-for="relatedLemma in lemma.relatedLemmas" :key="relatedLemma.slug">
         <Label :labelInfo="relatedLemma" />
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="center-column" v-html="body"></div>
   </footer>
 </template>

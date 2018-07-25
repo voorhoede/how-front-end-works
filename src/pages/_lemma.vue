@@ -4,7 +4,7 @@
             :description="page.introduction"
             :title="page.title" />
 
-    <main class="center-column">
+    <main class="center-column" role="main">
       <BackButton />
 
       <Lemma :lemma="page" />

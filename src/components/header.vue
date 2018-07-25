@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header role="banner">
     <div id="top" class="header" :style="`background-color: ${backgroundColor};`">
       <div class="center-column">
         <h1 class="header__title">{{ title }}</h1>

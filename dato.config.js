@@ -69,7 +69,7 @@ function generateLemmas(dato, root, i18n) {
         }
       }),
       seo: {
-        title: lemma.seo.title,
+        title: lemma.seo.title + ' - ' + dato.siteInfo.seo.title,
         description: lemma.seo.description,
         image: {
           height: lemma.seo.image ? lemma.seo.image.height : '',
