@@ -41,7 +41,6 @@ export default {
 .label:hover .label__test,
 .label:focus .label__test {
   background-color: rgba(255, 255, 255, .5);
-  transition: background-color .15s linear;
 }
 
 .label .concept-icon {

@@ -48,7 +48,6 @@ export default {
 .jump-to-top__button:focus {
   outline: none;
   border-color: var(--grey-dark);
-  transition: border-color .15s linear;
 }
 
 .jump-to-top__button:hover .jump-to-top__icon,

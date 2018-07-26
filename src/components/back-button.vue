@@ -51,7 +51,6 @@ export default {
 .back-button:hover .back-button__icon,
 .back-button:focus .back-button__icon {
   fill: var(--grey-dark);
-  transition: fill .15s linear;
   animation: bounce-arrow .25s ease-in-out;
 }
 
