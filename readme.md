@@ -1,6 +1,6 @@
 # Front-end ABC
 
-The Front-end ABC is a universal [Vue.js](https://vuejs.org/) app made with [Nuxt.js](https://nuxtjs.org/).
+The Front-end ABC is a universal [Vue.js](https://vuejs.org/) app made with [Nuxt.js](https://nuxtjs.org/). The app is deployed on [Netlify](https://www.netlify.com/).
 
 ## Development
 
@@ -9,6 +9,7 @@ The Front-end ABC is a universal [Vue.js](https://vuejs.org/) app made with [Nux
 * Clone the repository.
 * Copy `.env.example` to `.env`. You can find the `DATO_API_TOKEN` in the [CMS settings > API Tokens](https://front-end-abc.admin.datocms.com/admin/access_tokens/11195/edit). The CMS can be accessed using the `shared@voorhoede.nl` account (details in LastPass).
 * Run app in development mode (`npm run dev`), see [scripts](#scripts).
+* Changes on master and content publishing from the CMS trigger a new build and deploy to the [live environment](https://front-end-abc.netlify.com/).
 
 ### Structure
 
