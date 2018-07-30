@@ -1,8 +1,11 @@
 <template>
   <div>
     <Header :backgroundColor="page.headerColor"
+            :buttonLabel="label"
+            :buttonUrl="url"
             :concepts="page.concepts"
             :description="page.introduction"
+            :image="page.headerImage"
             :title="page.title" />
 
     <main class="center-column">
@@ -30,6 +33,12 @@ export default {
   },
   head() {
     return seoHead(this.page.seo)
+  },
+  data() {
+    return {
+      label: 'view alphabetical list',
+      url: '/alphabetical-index',
+    }
   }
 }
 </script>

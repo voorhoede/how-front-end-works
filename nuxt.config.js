@@ -23,7 +23,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#36afc5' },
+  loading: { color: '#fcbe40' },
 
   router: {
     middleware: 'meta-canonical'

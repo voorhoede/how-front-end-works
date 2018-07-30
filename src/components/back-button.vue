@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ArrowIcon from '~/static/icons/arrow.svg'
+import ArrowIcon from '../static/icons/arrow.svg'
 
 export default {
   components: { ArrowIcon },
