@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="label" :to="labelInfo.slug" :style="`background: ${labelInfo.color};`">
-    <div class="label__test">
+    <div class="label__link-area">
       <ConceptIcon v-if="labelInfo.icon" :imageUrl="labelInfo.icon" />
       {{ labelInfo.name }}
     </div>
@@ -25,10 +25,10 @@ export default {
   border-radius: 30px;
 }
 
-.label__test {
+.label__link-area {
   display: flex;
   align-items: center;
-  padding: .3rem .9rem;
+  padding: .3rem .9rem .25rem .9rem;
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0);
   transition: background-color .08s linear;
@@ -38,8 +38,8 @@ export default {
   outline: none;
 }
 
-.label:hover .label__test,
-.label:focus .label__test {
+.label:hover .label__link-area,
+.label:focus .label__link-area {
   background-color: rgba(255, 255, 255, .5);
 }
 
