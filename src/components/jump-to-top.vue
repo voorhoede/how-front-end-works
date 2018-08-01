@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import ArrowIcon from '~/static/icons/arrow.svg'
+import ArrowIcon from '../static/icons/arrow.svg'
 
 export default {
   components: { ArrowIcon }
@@ -39,7 +39,7 @@ export default {
 
 .jump-to-top__icon {
   width: 1rem;
-  height: 1.1srem;
+  height: 1.1rem;
   fill: var(--grey-medium--highlight);
   transition: fill .15s linear;
 }

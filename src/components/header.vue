@@ -1,9 +1,14 @@
 <template>
   <header role="banner">
-    <div id="top" class="header" :style="`background-color: ${backgroundColor};`">
+    <div id="top" :class="`header ${ image ? 'header--big' : '' }`" :style="`background-color: ${backgroundColor};`">
       <div class="center-column">
         <h1 class="header__title">{{ title }}</h1>
+
         <p class="header__description">{{ description }}</p>
+
+        <img v-if="image" class="header__image" :src="image" alt="">
+
+        <Button v-if="buttonLabel" :url="buttonUrl" :label="buttonLabel" />
       </div>
     </div>
 
@@ -12,11 +17,12 @@
 </template>
 
 <script>
+import Button from '../components/button'
 import Navigation from '../components/navigation'
 
 export default {
-  components: { Navigation },
-  props: ['backgroundColor', 'concepts', 'description', 'title']
+  components: { Button, Navigation },
+  props: ['backgroundColor', 'buttonLabel', 'buttonUrl', 'concepts', 'description', 'image', 'title'],
 }
 </script>
 
@@ -33,6 +39,10 @@ export default {
   .header {
     margin-bottom: var(--spacing-double);
     padding: calc(var(--spacing-double) * 2) 0;
+  }
+
+  .header--big {
+    padding: var(--spacing-default) 0 var(--spacing-double) 0;
   }
 }
 
@@ -58,6 +68,28 @@ export default {
 @media (min-width: 600px) {
   .header__description {
     font-size: var(--font-size-bigger);
+  }
+}
+
+.header__image {
+  margin-top: var(--spacing-default);
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 600px) {
+  .header__image {
+    margin-top: var(--spacing-double);
+  }
+}
+
+.button {
+  margin-top: var(--spacing-default);
+}
+
+@media (min-width: 600px) {
+  .button {
+    margin-top: var(--spacing-double);
   }
 }
 </style>
