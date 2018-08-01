@@ -11,12 +11,13 @@ function generateAlphabeticalIndex(dato, root, i18n) {
     footer: dato.siteInfo.footer,
     headerColor: dato.siteInfo.headerColor.hex,
     introduction: dato.siteInfo.introduction,
-    lemmas: dato.lemmata.map(lemma => {
-      return {
-        name: lemma.name,
-        slug: lemma.slug
-      }
-    }),
+    lemmas: dato.lemmata.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+                        .map(lemma => {
+                          return {
+                            name: lemma.name,
+                            slug: lemma.slug
+                          }
+                        }),
     seo: {
       title: dato.siteInfo.seo.title,
       description: dato.siteInfo.seo.description,
@@ -26,7 +27,6 @@ function generateAlphabeticalIndex(dato, root, i18n) {
         width: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.width : ''
       }
     },
-    slug: 'alphabetical-index',
     title: dato.siteInfo.title
   });
 }
@@ -63,7 +63,6 @@ function generateIndex(dato, root, i18n) {
         width: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.width : ''
       }
     },
-    slug: 'index',
     title: dato.siteInfo.title
   });
 }
