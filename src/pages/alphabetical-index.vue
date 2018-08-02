@@ -8,12 +8,20 @@
               :image="page.headerImage"
               :title="page.title" />
 
-      <main class="alphabetical-index center-column">
-        <IndexList v-for="(lemmas, key) in sortedGroupedLemmas"
-                   :key="key"
-                   :indexLetter="key"
-                   :lemmaColor="page.lemmaColor"
-                   :lemmas="lemmas" />
+      <main class="center-column">
+        <h2 class="a11y-sr-only">Filter techniques</h2>
+
+        <SearchForm v-model="searchValue" />
+
+        <h2 class="a11y-sr-only">Techniques</h2>
+
+        <div class="alphabetical-index">
+          <IndexList v-for="(lemmas, key) in sortedGroupedLemmas"
+                    :key="key"
+                    :indexLetter="key"
+                    :lemmaColor="page.lemmaColor"
+                    :lemmas="lemmas" />
+        </div>
       </main>
 
       <Footer :body="page.footer" />
@@ -26,9 +34,10 @@ import seoHead from '../lib/seo-head'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import IndexList from '../components/index-list'
+import SearchForm from '../components/search-form'
 
 export default {
-  components: { Footer, Header, IndexList },
+  components: { Footer, Header, IndexList, SearchForm },
   async asyncData() {
     const page = await getPageData('alphabetical-index')
     return { page }
@@ -40,6 +49,7 @@ export default {
     return {
       label: 'view concepts',
       url: '/',
+      searchValue: undefined, 
     }
   },
   methods: {
@@ -50,8 +60,16 @@ export default {
     }
   },
   computed: {
+    filteredLemmas() {
+      const searchValue = this.searchValue;
+      const searchRegExp = new RegExp(searchValue, 'i')
+      
+      return searchValue 
+        ? this.page.lemmas.filter(lemma => searchRegExp.test(lemma.name)) 
+        : this.page.lemmas
+    },
     groupedLemmas() {
-      return this.page.lemmas.reduce((acc, lemma) => {
+      return this.filteredLemmas.reduce((acc, lemma) => {
         const firstLetter = lemma.name.charAt(0).toLowerCase()
         const content = acc[firstLetter] ? acc[firstLetter] : []
         content.push(lemma)
@@ -73,14 +91,6 @@ export default {
 <style scoped>
 @import '../assets/variables.css';
 
-.alphabetical-index .index-list {
-  margin-bottom: calc(var(--spacing-default) * 3);
-}
-
-.alphabetical-index .index-list:last-child {
-  margin-bottom: var(--spacing-double);
-}
-
 @media (min-width: 600px) {
   .alphabetical-index {
     margin-bottom: var(--spacing-default);
@@ -88,8 +98,9 @@ export default {
     column-gap: var(--spacing-double);
   }
 
-  .alphabetical-index .index-list:last-child {
-    margin-bottom: calc(var(--spacing-default) * 3);
+  .alphabetical-index .index-list {
+    display: inline-block;
+    width: 100%;
   }
 }
 </style>

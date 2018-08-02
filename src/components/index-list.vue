@@ -1,8 +1,8 @@
 <template>
   <section class="index-list">
-    <h2 class="index-list__title" :style="`background-color: ${lemmaColor};`">
+    <h3 class="index-list__title" :style="`background-color: ${lemmaColor};`">
       <span class="a11y-sr-only">Items starting with</span> {{ indexLetter }}
-    </h2>
+    </h3>
 
     <ul class="index-list__lemmas flat-list">
       <li v-for="lemma in lemmas"
@@ -24,7 +24,18 @@ export default {
 @import '../assets/variables.css';
 
 .index-list {
-  padding-top: var(--spacing-half);
+  margin-bottom: calc(var(--spacing-default) * 3);
+  padding: var(--spacing-half) 0;
+}
+
+.index-list:last-child {
+  margin-bottom: var(--spacing-double);
+}
+
+@media (min-width: 600px) {
+  .index-list:last-child {
+    margin-bottom: calc(var(--spacing-default) * 3);
+  }
 }
 
 .index-list__title {
