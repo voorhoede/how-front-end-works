@@ -1,23 +1,19 @@
 <template>
     <div>
       <Header :backgroundColor="page.headerColor"
-            :buttonLabel="label"
-            :buttonUrl="url"
-            :concepts="page.concepts"
-            :description="page.introduction"
-            :image="page.headerImage"
-            :title="page.title" />
+              :buttonLabel="label"
+              :buttonUrl="url"
+              :concepts="page.concepts"
+              :description="page.introduction"
+              :image="page.headerImage"
+              :title="page.title" />
 
-      <main class="center-column">
-        <section v-for="(lemmas, key) in sortedGroupedLemmas" :key="key">
-          <h2>{{ key }}</h2>
-
-          <ul>
-            <li v-for="lemma in lemmas" :key="lemma.slug">
-              {{ lemma.name }}
-            </li>
-          </ul>
-        </section>
+      <main class="alphabetical-index center-column">
+        <IndexList v-for="(lemmas, key) in sortedGroupedLemmas"
+                   :key="key"
+                   :indexLetter="key"
+                   :lemmaColor="page.lemmaColor"
+                   :lemmas="lemmas" />
       </main>
 
       <Footer :body="page.footer" />
@@ -29,9 +25,10 @@ import getPageData from '../lib/get-page-data'
 import seoHead from '../lib/seo-head'
 import Footer from '../components/footer'
 import Header from '../components/header'
+import IndexList from '../components/index-list'
 
 export default {
-  components: { Footer, Header },
+  components: { Footer, Header, IndexList },
   async asyncData() {
     const page = await getPageData('alphabetical-index')
     return { page }
@@ -72,3 +69,27 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@import '../assets/variables.css';
+
+.alphabetical-index .index-list {
+  margin-bottom: calc(var(--spacing-default) * 3);
+}
+
+.alphabetical-index .index-list:last-child {
+  margin-bottom: var(--spacing-double);
+}
+
+@media (min-width: 600px) {
+  .alphabetical-index {
+    margin-bottom: var(--spacing-default);
+    columns: 2;
+    column-gap: var(--spacing-double);
+  }
+
+  .alphabetical-index .index-list:last-child {
+    margin-bottom: calc(var(--spacing-default) * 3);
+  }
+}
+</style>
