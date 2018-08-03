@@ -1,15 +1,15 @@
-# Front-end ABC
+# How Front-End Works
 
-The Front-end ABC is a universal [Vue.js](https://vuejs.org/) app made with [Nuxt.js](https://nuxtjs.org/). The app is deployed on [Netlify](https://www.netlify.com/).
+How Front-End Works is a universal [Vue.js](https://vuejs.org/) app made with [Nuxt.js](https://nuxtjs.org/). The app is deployed on [Netlify](https://www.netlify.com/).
 
 ## Development
 
 ### Getting started
 
 * Clone the repository.
-* Copy `.env.example` to `.env`. You can find the `DATO_API_TOKEN` in the [CMS settings > API Tokens](https://front-end-abc.admin.datocms.com/admin/access_tokens/11195/edit). The CMS can be accessed using the `shared@voorhoede.nl` account (details in LastPass).
+* Copy `.env.example` to `.env`. You can find the `DATO_API_TOKEN` in the [CMS settings > API Tokens](https://how-front-end-works.admin.datocms.com/admin/access_tokens/11195/edit). The CMS can be accessed using the `shared@voorhoede.nl` account (details in LastPass).
 * Run app in development mode (`npm run dev`), see [scripts](#scripts).
-* Changes on master and content publishing from the CMS trigger a new build and deploy to the [live environment](https://front-end-abc.netlify.com/).
+* Changes on master and content publishing from the CMS trigger a new build and deploy to the [live environment](https://how-front-end-works.netlify.com).
 
 ### Structure
 
