@@ -40,13 +40,14 @@ function generateIndex(dato, root, i18n) {
         description: concept.description,
         icon: concept.icon.url(),
         image: concept.image.url(),
-        lemmas: concept.lemmas.map(lemma => {
-          return {
-            color: dato.siteInfo.lemmaColor.hex,
-            name: lemma.name,
-            slug: lemma.slug
-          }
-        }),
+        lemmas: concept.lemmas.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+                              .map(lemma => {
+                                return {
+                                  color: dato.siteInfo.lemmaColor.hex,
+                                  name: lemma.name,
+                                  slug: lemma.slug
+                                }
+                              }),
         name: concept.name,
         slug: concept.slug
       }
@@ -75,13 +76,14 @@ function generateLemmas(dato, root, i18n) {
         return concept.lemmas.some(conceptLemma => {
           return conceptLemma.id === lemma.id
         });
-      }).map(relatedConcept => {
-        return {
-          color: relatedConcept.color.hex,
-          icon: relatedConcept.icon.url(),
-          name: relatedConcept.name,
-          slug: `/#${relatedConcept.slug}`
-        }
+      }).sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+        .map(relatedConcept => {
+          return {
+            color: relatedConcept.color.hex,
+            icon: relatedConcept.icon.url(),
+            name: relatedConcept.name,
+            slug: `/#${relatedConcept.slug}`
+          }
       }),
       description: lemma.description,
       footer: dato.siteInfo.footer,
@@ -89,13 +91,14 @@ function generateLemmas(dato, root, i18n) {
       image: lemma.image ? lemma.image.url() : '',
       introduction: dato.siteInfo.introduction,
       name: lemma.name,
-      relatedLemmas: lemma.relatedLemmas.map(relatedLemma => {
-        return {
-          color: dato.siteInfo.lemmaColor.hex,
-          name: relatedLemma.name,
-          slug: relatedLemma.slug,
-        }
-      }),
+      relatedLemmas: lemma.relatedLemmas.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+                                        .map(relatedLemma => {
+                                          return {
+                                            color: dato.siteInfo.lemmaColor.hex,
+                                            name: relatedLemma.name,
+                                            slug: relatedLemma.slug,
+                                          }
+                                        }),
       seo: {
         title: lemma.seo.title + ' - ' + dato.siteInfo.seo.title,
         description: lemma.seo.description,
