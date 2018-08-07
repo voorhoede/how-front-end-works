@@ -43,16 +43,10 @@ export default {
 
 .navigation__item {
   flex: 0 0 40%;
-  margin-bottom: var(--spacing-default);
+  margin: 0 var(--spacing-half) var(--spacing-default) var(--spacing-half);
 }
 
 @media (min-width: 400px) {
-  .navigation__item {
-    flex: 0 0 25%;
-  }
-}
-
-@media (min-width: 600px) {
   .navigation__item {
     flex: 0 0 20%;
   }
