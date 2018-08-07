@@ -15,13 +15,16 @@
 
         <h2 class="a11y-sr-only">Techniques</h2>
 
-        <div class="alphabetical-index">
-          <IndexList v-for="(lemmas, key) in sortedGroupedLemmas"
-                    :key="key"
-                    :indexLetter="key"
-                    :lemmaColor="page.lemmaColor"
-                    :lemmas="lemmas" />
+        <div v-if="filteredLemmas.length" class="alphabetical-index">
+          <transition-group name="slide-fade">
+            <IndexList v-for="(lemmas, key) in sortedGroupedLemmas"
+                       :key="key"
+                       :indexLetter="key"
+                       :lemmaColor="page.lemmaColor"
+                       :lemmas="lemmas" />
+          </transition-group>
         </div>
+        <p v-else class="alphabetical-index__empty">No results</p>
       </main>
 
       <Footer :body="page.footer" />
@@ -63,7 +66,7 @@ export default {
     filteredLemmas() {
       const searchValue = this.searchValue;
       const searchRegExp = new RegExp(searchValue, 'i')
-      
+
       return searchValue 
         ? this.page.lemmas.filter(lemma => searchRegExp.test(lemma.name)) 
         : this.page.lemmas
@@ -101,6 +104,11 @@ export default {
   .alphabetical-index .index-list {
     display: inline-block;
     width: 100%;
+  }
+
+  .alphabetical-index__empty {
+    margin-bottom: var(--spacing-double);
+    text-align: center;
   }
 }
 </style>

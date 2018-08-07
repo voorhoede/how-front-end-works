@@ -5,11 +5,13 @@
     </h3>
 
     <ul class="index-list__lemmas flat-list">
-      <li v-for="lemma in lemmas"
-          :key="lemma.slug"
-          class="index-list__link">
-        <nuxt-link :to="lemma.slug">{{ lemma.name }}</nuxt-link>
-      </li>
+      <transition-group name="slide-fade">
+        <li v-for="lemma in lemmas"
+            :key="lemma.slug"
+            class="index-list__link">
+          <nuxt-link :to="lemma.slug">{{ lemma.name }}</nuxt-link>
+        </li>
+      </transition-group>
     </ul>
   </section>
 </template>
