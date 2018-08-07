@@ -6,9 +6,9 @@
 
     <div class="lemma__description" v-html="lemma.description"></div>
 
-    <h3 class="h5">Part of</h3>
+    <h3 v-if="lemma.concepts.length > 0" class="h5">Part of</h3>
 
-    <ul class="lemma__labels flat-list">
+    <ul v-if="lemma.concepts.length > 0" class="lemma__labels flat-list">
       <li v-for="concept in lemma.concepts" :key="concept.slug">
         <Label :labelInfo="concept" />
       </li>
