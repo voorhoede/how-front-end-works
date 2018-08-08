@@ -1,5 +1,5 @@
 <template>
-  <a class="back-button" href="javascript:window.history.back();">
+  <a class="back-button" href="/" @click.prevent="goBack()">
     <ArrowIcon class="back-button__icon" />
     <span class="back-button__content">Back to overview</span>
   </a>
@@ -10,7 +10,12 @@ import ArrowIcon from '../static/icons/arrow.svg'
 
 export default {
   components: { ArrowIcon },
-  props: ['label, url']
+  props: ['label, url'],
+  methods: {
+    goBack() {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 
