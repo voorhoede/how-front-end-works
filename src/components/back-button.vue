@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link class="back-button" to="/">
+  <a class="back-button" href="javascript:window.history.back();">
     <ArrowIcon class="back-button__icon" />
     <span class="back-button__content">Back to overview</span>
-  </nuxt-link>
+  </a>
 </template>
 
 <script>
