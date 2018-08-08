@@ -2,7 +2,9 @@
   <header role="banner">
     <div id="top" :class="`header ${ image ? 'header--big' : '' }`" :style="`background-color: ${backgroundColor};`">
       <div class="center-column">
-        <h1 class="header__title">{{ title }}</h1>
+        <h1 class="header__title">
+          <nuxt-link to="/">{{ title }}</nuxt-link>
+        </h1>
 
         <p class="header__description">{{ description }}</p>
 
@@ -52,6 +54,15 @@ export default {
   font-style: normal;
   font-weight: bold;
   font-size: var(--font-size-large);
+}
+
+.header__title a {
+  border-bottom: 1px solid transparent;
+}
+
+.header__title a:hover,
+.header__title a:focus {
+  border-bottom: 1px solid var(--grey-dark);
 }
 
 @media (min-width: 600px) {
