@@ -6,7 +6,7 @@
           <nuxt-link to="/">{{ title }}</nuxt-link>
         </h1>
 
-        <p class="header__description">{{ description }}</p>
+        <p class="header__description" v-html="description"></p>
 
         <img v-if="image" class="header__image" :src="image" alt="">
 
