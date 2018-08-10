@@ -1,5 +1,7 @@
 <template>
-  <nuxt-link class="label" :to="labelInfo.slug" :style="`background: ${labelInfo.color};`">
+  <nuxt-link :to="{ name: 'lemma', params: { lemma: labelInfo.slug, referrer: $route.name }}"
+             class="label"
+             :style="`background: ${labelInfo.color};`">
     <div class="label__link-area">
       <ConceptIcon v-if="labelInfo.icon" :imageUrl="labelInfo.icon" />
       {{ labelInfo.name }}

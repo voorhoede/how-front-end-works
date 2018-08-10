@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="back-button" to="/">
+  <nuxt-link class="back-button" :to="previousUrl">
     <ArrowIcon class="back-button__icon" />
     <span class="back-button__content">Back to overview</span>
   </nuxt-link>
@@ -10,7 +10,11 @@ import ArrowIcon from '../static/icons/arrow.svg'
 
 export default {
   components: { ArrowIcon },
-  props: ['label, url']
+  computed: {
+    previousUrl() {
+      return { name: this.$route.params.referrer || 'index' }
+    }
+  }
 }
 </script>
 

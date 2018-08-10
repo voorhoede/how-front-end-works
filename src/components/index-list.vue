@@ -8,7 +8,7 @@
       <li v-for="lemma in lemmas"
           :key="lemma.slug"
           class="index-list__link">
-        <nuxt-link :to="lemma.slug">{{ lemma.name }}</nuxt-link>
+        <nuxt-link :to="{ name: 'lemma', params: { lemma: lemma.slug, referrer: $route.name }}">{{ lemma.name }}</nuxt-link>
       </li>
     </ul>
   </section>
