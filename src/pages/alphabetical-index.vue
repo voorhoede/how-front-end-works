@@ -15,13 +15,14 @@
 
         <h2 class="a11y-sr-only">Techniques</h2>
 
-        <div class="alphabetical-index">
+        <div v-if="filteredLemmas.length" class="alphabetical-index">
           <IndexList v-for="(lemmas, key) in sortedGroupedLemmas"
                     :key="key"
                     :indexLetter="key"
                     :lemmaColor="page.lemmaColor"
                     :lemmas="lemmas" />
         </div>
+        <div v-else class="alphabetical-index__no-results">No filter results</div>
       </main>
 
       <Footer :body="page.footer" />
@@ -90,6 +91,11 @@ export default {
 
 <style scoped>
 @import '../assets/variables.css';
+
+.alphabetical-index__no-results {
+  margin-bottom: var(--spacing-double);
+  text-align: center;
+}
 
 @media (min-width: 600px) {
   .alphabetical-index {
