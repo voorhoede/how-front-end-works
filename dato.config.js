@@ -82,7 +82,7 @@ function generateLemmas(dato, root, i18n) {
             color: relatedConcept.color.hex,
             icon: relatedConcept.icon.url(),
             name: relatedConcept.name,
-            slug: `/#${relatedConcept.slug}`
+            slug: relatedConcept.slug
           }
       }),
       description: lemma.description,

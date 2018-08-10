@@ -13,7 +13,7 @@
 
     <ul class="concept__labels flat-list">
       <li v-for="lemma in concept.lemmas" :key="lemma.slug">
-        <Label :labelInfo="lemma" />
+        <Label :labelInfo="lemma" labelType="lemma" />
       </li>
     </ul>
 

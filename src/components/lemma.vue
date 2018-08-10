@@ -6,19 +6,19 @@
 
     <div class="lemma__description" v-html="lemma.description"></div>
 
-    <h3 v-if="lemma.concepts.length > 0" class="h5">Part of</h3>
+    <h3 v-if="lemma.concepts.length" class="h5">Part of</h3>
 
-    <ul v-if="lemma.concepts.length > 0" class="lemma__labels flat-list">
+    <ul v-if="lemma.concepts.length" class="lemma__labels flat-list">
       <li v-for="concept in lemma.concepts" :key="concept.slug">
-        <Label :labelInfo="concept" />
+        <Label :labelInfo="concept" labelType="index" />
       </li>
     </ul>
 
-    <h3 v-if="lemma.relatedLemmas.length > 0" class="h5">See also</h3>
+    <h3 v-if="lemma.relatedLemmas.length" class="h5">See also</h3>
 
-    <ul v-if="lemma.relatedLemmas.length > 0" class="lemma__labels flat-list">
+    <ul v-if="lemma.relatedLemmas.length" class="lemma__labels flat-list">
       <li v-for="relatedLemma in lemma.relatedLemmas" :key="relatedLemma.slug">
-        <Label :labelInfo="relatedLemma" />
+        <Label :labelInfo="relatedLemma" labelType="lemma" />
       </li>
     </ul>
   </section>

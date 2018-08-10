@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="{ name: 'lemma', params: { lemma: labelInfo.slug, referrer: $route.name }}"
+  <nuxt-link :to="{ name: labelType, params: { [labelType]: labelInfo.slug, referrer: $route.name }}"
              class="label"
              :style="`background: ${labelInfo.color};`">
     <div class="label__link-area">
@@ -14,7 +14,7 @@ import ConceptIcon from '../components/concept-icon'
 
 export default {
   components: { ConceptIcon },
-  props: ['labelInfo']
+  props: ['labelInfo', 'labelType']
 }
 </script>
 
