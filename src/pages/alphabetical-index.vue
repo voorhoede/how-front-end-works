@@ -11,7 +11,7 @@
       <main class="center-column">
         <h2 class="a11y-sr-only">Filter techniques</h2>
 
-        <SearchForm v-model="searchValue" />
+        <SearchForm v-model="searchValue" placeholderText="Filter techniques" />
 
         <h2 class="a11y-sr-only">Techniques</h2>
 

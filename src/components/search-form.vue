@@ -1,14 +1,12 @@
 <template>
   <form v-on:submit.prevent class="search-form">
-    
     <label class="search-form__label" for="search">
       <span class="a11y-sr-only">Filter techniques</span>
-      <input v-bind:value="searchValue"
-           v-on:input="$emit('input', $event.target.value)"
-           class="search-form__input"
-           type="text"
-           id="search"
-           placeholder="Filter techniques">
+      <input v-on:input="$emit('input', $event.target.value)"
+             class="search-form__input"
+             type="text"
+             id="search"
+             :placeholder="placeholderText">
       <SearchIcon class="search-form__icon" />
     </label>
   </form>
@@ -19,7 +17,7 @@ import SearchIcon from '../static/icons/search-icon.svg'
 
 export default {
   components: { SearchIcon },
-  props: ['searchValue']
+  props: ['placeholderText']
 }
 </script>
 
