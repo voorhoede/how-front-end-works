@@ -92,12 +92,12 @@ export default {
   }
 }
 
-.button {
+.header .button {
   margin-top: var(--spacing-default);
 }
 
 @media (min-width: 600px) {
-  .button {
+  .header .button {
     margin-top: var(--spacing-double);
   }
 }

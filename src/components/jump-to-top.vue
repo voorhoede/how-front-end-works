@@ -26,6 +26,7 @@ export default {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding: 0;
   width: 2rem;
   height: 2rem;
   transform: translateY(50%);

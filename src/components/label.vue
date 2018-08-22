@@ -34,8 +34,9 @@ export default {
   transition: background-color .08s linear;
 }
 
+.label:hover,
 .label:focus {
-  outline: none;
+  border: none;
 }
 
 .label:hover .label__link-area,

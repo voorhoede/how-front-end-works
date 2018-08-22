@@ -53,7 +53,7 @@ export default {
 .back-button:hover .back-button__icon,
 .back-button:focus .back-button__icon {
   fill: var(--grey-dark);
-  animation: bounce-arrow .25s ease-in-out;
+  animation: bounce-arrow-left .25s ease-in-out;
 }
 
 .back-button:hover .back-button__content,
@@ -62,7 +62,7 @@ export default {
   border-bottom: 1px solid var(--grey-dark);
 }
 
-@keyframes bounce-arrow {
+@keyframes bounce-arrow-left {
   0% {
     margin-left: 0;
     margin-right: var(--spacing-half);
@@ -96,7 +96,7 @@ export default {
     margin-right: 0;
   }
 
-  @keyframes bounce-arrow {
+  @keyframes bounce-arrow-left {
     0% {
       margin-right: 0;
     }
