@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="site-content">
     <Header :backgroundColor="page.headerColor"
             :description="page.introduction"
             :title="page.title" />
 
-    <main class="center-column" role="main">
+    <main class="site-content__main center-column" role="main">
       <BackButton />
 
       <Lemma :lemma="page" />

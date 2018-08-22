@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="site-content">
     <Header :backgroundColor="page.headerColor"
             :buttonLabel="label"
             :buttonUrl="url"
@@ -8,7 +8,7 @@
             :image="page.headerImage"
             :title="page.title" />
 
-    <main class="center-column">
+    <main class="site-content__main center-column">
       <Concept v-for="concept in page.concepts"
                :concept="concept"
                :key="concept.name" />

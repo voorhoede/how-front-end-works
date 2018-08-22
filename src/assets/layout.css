@@ -2,6 +2,16 @@ body {
     background-color: var(--grey-light);
 }
 
+.site-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content__main {
+    flex: 1 0 auto;
+}
+
 .center-column {
     margin: 0 var(--spacing-default);
     max-width: 600px;
