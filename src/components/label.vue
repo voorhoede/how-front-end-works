@@ -18,9 +18,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .label {
   display: inline-block;
   border: none;

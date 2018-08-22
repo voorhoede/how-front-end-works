@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .concept-icon {
   display: flex;
   justify-content: center;

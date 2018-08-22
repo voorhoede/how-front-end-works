@@ -15,9 +15,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .jump-to-top {
   border-bottom: 1px solid var(--grey-medium);
 }

@@ -16,9 +16,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .button {
   display: inline-block;
   padding-bottom: 0;

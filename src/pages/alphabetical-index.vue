@@ -89,9 +89,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .alphabetical-index__no-results {
   margin-bottom: var(--spacing-double);
   text-align: center;

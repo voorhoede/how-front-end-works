@@ -20,9 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .index-list {
   margin-bottom: calc(var(--spacing-default) * 3);
   padding: var(--spacing-half) 0;
