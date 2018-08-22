@@ -21,9 +21,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .search-form__label {
   position: relative;
   margin: 0 auto calc(var(--spacing-default) * 3) auto;

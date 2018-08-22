@@ -28,9 +28,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .header {
   margin-bottom: var(--spacing-default);
   padding: var(--spacing-double);
@@ -94,12 +92,12 @@ export default {
   }
 }
 
-.button {
+.header .button {
   margin-top: var(--spacing-default);
 }
 
 @media (min-width: 600px) {
-  .button {
+  .header .button {
     margin-top: var(--spacing-double);
   }
 }

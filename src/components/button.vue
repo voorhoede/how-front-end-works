@@ -16,9 +16,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .button {
   display: inline-block;
   padding-bottom: 0;
@@ -40,7 +38,7 @@ export default {
   width: .8rem;
   height: 1.2rem;
   fill: var(--grey-dark);
-  transform: rotate(90deg);
+  transform: rotate(90deg) translateY(0);
 }
 
 .button:hover .button__link-area,
@@ -50,12 +48,12 @@ export default {
 
 .button:hover .button__icon,
 .button:focus .button__icon {
-  animation: bounce-arrow .25s ease-in-out;
+  animation: bounce-arrow-right .25s ease-in-out;
   transition: fill .15s linear;
   fill: var(--grey-dark);
 }
 
-@keyframes bounce-arrow {
+@keyframes bounce-arrow-right {
   0% {
     transform: rotate(90deg) translateY(0);
   }

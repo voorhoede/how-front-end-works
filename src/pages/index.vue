@@ -43,9 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/core.css';
-
+<style>
 .concept {
   margin-bottom: calc(var(--spacing-default) * 3);
 }

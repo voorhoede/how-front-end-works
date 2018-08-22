@@ -34,7 +34,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-@import '../assets/core.css';
-</style>

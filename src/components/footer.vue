@@ -10,9 +10,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .footer {
   margin-bottom: var(--spacing-double);
   font-size: var(--font-size-small);

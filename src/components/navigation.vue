@@ -20,9 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/variables.css';
-
+<style>
 .navigation {
   margin-bottom: var(--spacing-default);
   border-bottom: 1px solid var(--grey-medium);
