@@ -14,11 +14,11 @@ body {
 
 .center-column {
     margin: 0 var(--spacing-default);
-    max-width: 600px;
 }
 
 @media (min-width: 635px) {
     .center-column {
         margin: 0 auto;
+        width: 600px;
     }
 }
