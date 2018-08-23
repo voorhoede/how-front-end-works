@@ -22,6 +22,7 @@ function generateAlphabeticalIndex(dato, root, i18n) {
     seo: {
       title: dato.siteInfo.seo.title,
       description: dato.siteInfo.seo.description,
+      url: 'alphabetical-index',
       image: {
         height: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.height : '',
         url: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.url() : '',
@@ -59,6 +60,7 @@ function generateIndex(dato, root, i18n) {
     seo: {
       title: dato.siteInfo.seo.title,
       description: dato.siteInfo.seo.description,
+      url: '',
       image: {
         height: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.height : '',
         url: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.url() : '',
@@ -102,6 +104,7 @@ function generateLemmas(dato, root, i18n) {
       seo: {
         title: lemma.seo.title + ' - ' + dato.siteInfo.seo.title,
         description: lemma.seo.description,
+        url: lemma.slug,
         image: {
           height: lemma.seo.image ? lemma.seo.image.height : '',
           url: lemma.seo.image ? lemma.seo.image.url() : '',
