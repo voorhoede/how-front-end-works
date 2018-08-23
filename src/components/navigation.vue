@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .navigation {
   margin-bottom: var(--spacing-default);
   border-bottom: 1px solid var(--grey-medium);

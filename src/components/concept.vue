@@ -33,6 +33,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .concept__title {
   display: flex;
   align-items: center;

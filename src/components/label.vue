@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .label {
   display: inline-block;
   border: none;

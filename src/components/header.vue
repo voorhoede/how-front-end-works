@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .header {
   margin-bottom: var(--spacing-default);
   padding: var(--spacing-double);

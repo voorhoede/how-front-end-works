@@ -11,6 +11,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .footer {
   margin-bottom: var(--spacing-double);
   font-size: var(--font-size-small);

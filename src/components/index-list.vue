@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .index-list {
   margin-bottom: calc(var(--spacing-default) * 3);
   padding: var(--spacing-half) 0;

@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .jump-to-top {
   border-bottom: 1px solid var(--grey-medium);
 }

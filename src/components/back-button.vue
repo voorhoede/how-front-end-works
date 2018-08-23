@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/variables.css';
+
 .back-button {
   display: inline-flex;
   align-items: center;
