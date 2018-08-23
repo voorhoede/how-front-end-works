@@ -12,7 +12,8 @@ export default {
   components: { ArrowIcon },
   computed: {
     previousUrl() {
-      return { name: this.$route.params.referrer || 'index' }
+      const referrer = this.$route.params.referrer === 'alphabetical' ? this.$route.params.referrer : 'index'
+      return { name: referrer }
     }
   }
 }
