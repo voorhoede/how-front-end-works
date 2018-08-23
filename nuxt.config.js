@@ -26,10 +26,6 @@ module.exports = {
   */
   loading: { color: '#fcbe40' },
 
-  router: {
-    middleware: 'meta-canonical'
-  },
-
   modules: [
     ['@nuxtjs/sitemap', { // https://github.com/nuxt-community/sitemap-module
       path: '/sitemap.xml',
