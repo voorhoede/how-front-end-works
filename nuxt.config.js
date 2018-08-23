@@ -1,3 +1,4 @@
+const fs = require('fs')
 const baseUrl = ''
 const isProduction = (process.env.NODE_ENV === 'production')
 
@@ -78,5 +79,6 @@ module.exports = {
 
   generate: {
     dir: 'dist/app/',
+    routes: fs.readdirSync('./src/static/data/lemmas').map(file => file.replace('.json', ''))
   }
 }
