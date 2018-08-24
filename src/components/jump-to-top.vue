@@ -1,6 +1,6 @@
 <template>
   <div class="jump-to-top">
-    <a class="jump-to-top__button" href="#top">
+    <a @click.prevent="animateScrollToElement('#top')" href="#top" class="jump-to-top__button">
       <ArrowIcon class="jump-to-top__icon" />
       <span class="a11y-sr-only">Jump to top of page</span>
     </a>
@@ -8,10 +8,14 @@
 </template>
 
 <script>
+import animateScrollToElement from '../lib/animate-scroll-to-element'
 import ArrowIcon from '../static/icons/arrow.svg'
 
 export default {
-  components: { ArrowIcon }
+  components: { ArrowIcon },
+  methods: {
+    animateScrollToElement
+  }
 }
 </script>
 

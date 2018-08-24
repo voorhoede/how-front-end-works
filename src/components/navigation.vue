@@ -2,7 +2,7 @@
   <nav class="navigation center-column" role="navigation">
     <ul class="flat-list">
       <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
-        <a :href="'#' + concept.slug">
+        <a @click.prevent="animateScrollToElement('#' + concept.slug)" :href="'#' + concept.slug">
           <ConceptIcon :backgroundColor="concept.color" :imageUrl="concept.icon" />
           <span class="navigation__content">{{ concept.name }}</span>
         </a>
@@ -12,11 +12,15 @@
 </template>
 
 <script>
+import animateScrollToElement from '../lib/animate-scroll-to-element'
 import ConceptIcon from '../components/concept-icon'
 
 export default {
   components: { ConceptIcon },
-  props: ['concepts']
+  props: ['concepts'],
+  methods: {
+    animateScrollToElement
+  }
 }
 </script>
 
