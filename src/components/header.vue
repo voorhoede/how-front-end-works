@@ -1,6 +1,6 @@
 <template>
   <header role="banner">
-    <div id="top" :class="`header ${ image ? 'header--big' : '' }`" :style="`background-color: ${backgroundColor};`">
+    <div :class="`header ${ image ? 'header--big' : '' }`" :style="`background-color: ${backgroundColor};`">
       <div class="center-column">
         <h1 class="header__title">
           <nuxt-link to="/">{{ title }}</nuxt-link>
@@ -39,7 +39,6 @@ export default {
 
 @media (min-width: 600px) {
   .header {
-    margin-bottom: var(--spacing-double);
     padding: calc(var(--spacing-double) * 2) 0;
   }
 

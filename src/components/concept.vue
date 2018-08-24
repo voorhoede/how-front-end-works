@@ -35,6 +35,10 @@ export default {
 <style>
 @import '../assets/variables.css';
 
+.concept {
+  padding-top: var(--spacing-default);
+}
+
 .concept__title {
   display: flex;
   align-items: center;

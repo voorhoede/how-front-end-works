@@ -45,12 +45,12 @@ export default {
 
 <style>
 .concept {
-  margin-bottom: calc(var(--spacing-default) * 3);
+  margin-bottom: var(--spacing-double);
 }
 
 @media (min-width: 600px) {
   .concept {
-    margin-bottom: calc(var(--spacing-default) * 6);
+    margin-bottom: calc(var(--spacing-default) * 5);
   }
 }
 </style>

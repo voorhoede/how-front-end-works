@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation center-column" role="navigation">
+  <nav id="top" class="navigation center-column" role="navigation">
     <ul class="flat-list">
       <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
         <a @click.prevent="animateScrollToElement('#' + concept.slug)" :href="'#' + concept.slug">
@@ -35,7 +35,7 @@ export default {
 @media (min-width: 600px) {
   .navigation {
     margin-bottom: calc(var(--spacing-default) * 3);
-    padding-bottom: var(--spacing-default);
+    padding: var(--spacing-default) 0;
   }
 }
 
