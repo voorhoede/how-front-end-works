@@ -3,7 +3,7 @@
              class="label"
              :style="`background: ${labelInfo.color};`">
     <div class="label__link-area">
-      <ConceptIcon v-if="labelInfo.icon" :imageUrl="labelInfo.icon" />
+      <concept-icon v-if="labelInfo.icon" :imageUrl="labelInfo.icon" />
       {{ labelInfo.name }}
     </div>
   </nuxt-link>

@@ -1,6 +1,6 @@
 <template>
     <div class="site-content">
-      <Header :backgroundColor="page.headerColor"
+      <app-header :backgroundColor="page.headerColor"
               :buttonLabel="label"
               :buttonUrl="url"
               :concepts="page.concepts"
@@ -11,12 +11,12 @@
       <main class="site-content__main center-column">
         <h2 class="a11y-sr-only">Filter techniques</h2>
 
-        <SearchForm v-model="searchValue" placeholderText="Filter techniques" />
+        <search-form v-model="searchValue" placeholderText="Filter techniques" />
 
         <h2 class="a11y-sr-only">Techniques</h2>
 
         <div v-if="filteredLemmas.length" class="alphabetical-index">
-          <IndexList v-for="(lemmas, key) in sortedGroupedLemmas"
+          <index-list v-for="(lemmas, key) in sortedGroupedLemmas"
                     :key="key"
                     :indexLetter="key"
                     :lemmaColor="page.lemmaColor"
@@ -25,20 +25,20 @@
         <div v-else class="alphabetical-index__no-results">No filter results</div>
       </main>
 
-      <Footer :body="page.footer" />
+      <app-footer :body="page.footer" />
     </div>
 </template>
 
 <script>
+import AppFooter from '../components/app-footer'
+import AppHeader from '../components/app-header'
 import getPageData from '../lib/get-page-data'
 import seoHead from '../lib/seo-head'
-import Footer from '../components/footer'
-import Header from '../components/header'
 import IndexList from '../components/index-list'
 import SearchForm from '../components/search-form'
 
 export default {
-  components: { Footer, Header, IndexList, SearchForm },
+  components: { AppFooter, AppHeader, IndexList, SearchForm },
   async asyncData() {
     const page = await getPageData('alphabetical-index')
     return { page }

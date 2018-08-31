@@ -3,7 +3,7 @@
     <ul class="flat-list">
       <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
         <a @click.prevent="animateScrollToElement('#' + concept.slug)" :href="'#' + concept.slug">
-          <ConceptIcon :backgroundColor="concept.color" :imageUrl="concept.icon" />
+          <concept-icon :backgroundColor="concept.color" :imageUrl="concept.icon" />
           <span class="navigation__content">{{ concept.name }}</span>
         </a>
       </li>

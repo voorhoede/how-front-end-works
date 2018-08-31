@@ -1,7 +1,7 @@
 <template>
   <div class="jump-to-top">
     <a @click.prevent="animateScrollToElement('#top')" href="#top" class="jump-to-top__button">
-      <ArrowIcon class="jump-to-top__icon" />
+      <arrow-icon class="jump-to-top__icon" />
       <span class="a11y-sr-only">Jump to navigation</span>
     </a>
   </div>

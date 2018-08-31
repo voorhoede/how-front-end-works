@@ -7,7 +7,7 @@
              type="text"
              id="search"
              :placeholder="placeholderText">
-      <SearchIcon class="search-form__icon" />
+      <search-icon class="search-form__icon" />
     </label>
   </form>
 </template>

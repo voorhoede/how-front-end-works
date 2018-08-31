@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="back-button" :to="previousUrl">
-    <ArrowIcon class="back-button__icon" />
+    <arrow-icon class="back-button__icon" />
     <span class="back-button__content">Back to overview</span>
   </nuxt-link>
 </template>
