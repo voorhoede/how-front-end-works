@@ -1,29 +1,29 @@
 <template>
   <div class="site-content">
-    <Header :backgroundColor="page.headerColor"
+    <app-header :backgroundColor="page.headerColor"
             :description="page.introduction"
             :title="page.title" />
 
     <main class="site-content__main center-column" role="main">
-      <BackButton />
+      <back-button />
 
-      <Lemma :lemma="page" />
+      <lemma-block :lemma="page" />
     </main>
 
-    <Footer :body="page.footer" />
+    <app-footer :body="page.footer" />
   </div>
 </template>
 
 <script>
+import AppFooter from '../components/app-footer'
+import AppHeader from '../components/app-header'
 import getPageData from '../lib/get-page-data'
 import seoHead from '../lib/seo-head'
 import BackButton from '../components/back-button'
-import Footer from '../components/footer'
-import Header from '../components/header'
-import Lemma from '../components/lemma'
+import LemmaBlock from '../components/lemma-block'
 
 export default {
-  components: { BackButton, Footer, Header, Lemma },
+  components: { AppFooter, AppHeader, BackButton, LemmaBlock },
   async asyncData({ params }) {
     const { lemma } = params
     const page = await getPageData(`lemmas/${ lemma }`)

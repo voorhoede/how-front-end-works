@@ -3,7 +3,7 @@
     <img class="concept__image" :src="concept.image" alt="">
 
     <h2 class="concept__title h1">
-      <ConceptIcon :backgroundColor="concept.color" :imageUrl="concept.icon" />
+      <concept-icon :backgroundColor="concept.color" :imageUrl="concept.icon" />
       {{ concept.name }}
     </h2>
 
@@ -13,21 +13,21 @@
 
     <ul class="concept__labels flat-list">
       <li v-for="lemma in concept.lemmas" :key="lemma.slug">
-        <Label :labelInfo="lemma" labelType="lemma" />
+        <lemma-label :labelInfo="lemma" labelType="lemma" />
       </li>
     </ul>
 
-    <JumpToTop />
+    <jump-to-top />
   </section>
 </template>
 
 <script>
 import ConceptIcon from '../components/concept-icon'
 import JumpToTop from '../components/jump-to-top'
-import Label from '../components/label'
+import LemmaLabel from '../components/lemma-label'
 
 export default {
-  components: { ConceptIcon, JumpToTop, Label },
+  components: { ConceptIcon, JumpToTop, LemmaLabel },
   props: ['concept']
 }
 </script>

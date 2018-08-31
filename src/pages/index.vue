@@ -1,6 +1,6 @@
 <template>
   <div class="site-content">
-    <Header :backgroundColor="page.headerColor"
+    <app-header :backgroundColor="page.headerColor"
             :buttonLabel="label"
             :buttonUrl="url"
             :concepts="page.concepts"
@@ -9,24 +9,24 @@
             :title="page.title" />
 
     <main class="site-content__main center-column">
-      <Concept v-for="concept in page.concepts"
+      <concept-block v-for="concept in page.concepts"
                :concept="concept"
                :key="concept.name" />
     </main>
 
-    <Footer :body="page.footer" />
+    <app-footer :body="page.footer" />
   </div>
 </template>
 
 <script>
+import AppFooter from '../components/app-footer'
+import AppHeader from '../components/app-header'
 import getPageData from '../lib/get-page-data'
 import seoHead from '../lib/seo-head'
-import Concept from '../components/concept'
-import Footer from '../components/footer'
-import Header from '../components/header'
+import ConceptBlock from '../components/concept-block'
 
 export default {
-  components: { Concept, Footer, Header },
+  components: { AppFooter, AppHeader, ConceptBlock },
   async asyncData() {
     const page = await getPageData('index')
     return { page }

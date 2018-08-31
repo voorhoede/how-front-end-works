@@ -10,20 +10,20 @@
 
         <img v-if="image" class="header__image" :src="image" alt="">
 
-        <Button v-if="buttonLabel" :url="buttonUrl" :label="buttonLabel" />
+        <navigation-button v-if="buttonLabel" :url="buttonUrl" :label="buttonLabel" />
       </div>
     </div>
 
-    <Navigation v-if="concepts" :concepts="concepts" />
+    <main-navigation v-if="concepts" :concepts="concepts" />
   </header>
 </template>
 
 <script>
-import Button from '../components/button'
-import Navigation from '../components/navigation'
+import MainNavigation from '../components/main-navigation'
+import NavigationButton from '../components/navigation-button'
 
 export default {
-  components: { Button, Navigation },
+  components: { MainNavigation, NavigationButton },
   props: ['backgroundColor', 'buttonLabel', 'buttonUrl', 'concepts', 'description', 'image', 'title'],
 }
 </script>

@@ -10,7 +10,7 @@
 
     <ul v-if="lemma.concepts.length" class="lemma__labels flat-list">
       <li v-for="concept in lemma.concepts" :key="concept.slug">
-        <Label :labelInfo="concept" labelType="index" />
+        <lemma-label :labelInfo="concept" labelType="index" />
       </li>
     </ul>
 
@@ -18,17 +18,17 @@
 
     <ul v-if="lemma.relatedLemmas.length" class="lemma__labels flat-list">
       <li v-for="relatedLemma in lemma.relatedLemmas" :key="relatedLemma.slug">
-        <Label :labelInfo="relatedLemma" labelType="lemma" />
+        <lemma-label :labelInfo="relatedLemma" labelType="lemma" />
       </li>
     </ul>
   </section>
 </template>
 
 <script>
-import Label from '../components/label'
+import LemmaLabel from '../components/lemma-label'
 
 export default {
-  components: { Label },
+  components: { LemmaLabel },
   props: ['lemma']
 }
 </script>

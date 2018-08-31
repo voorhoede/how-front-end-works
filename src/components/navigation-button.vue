@@ -2,7 +2,7 @@
   <nuxt-link class="button" :to="url">
     <div class="button__link-area">
       {{ label }}
-      <ArrowIcon class="button__icon" />
+      <arrow-icon class="button__icon" />
     </div>
   </nuxt-link>
 </template>
