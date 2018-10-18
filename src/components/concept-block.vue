@@ -28,7 +28,12 @@ import LemmaLabel from '../components/lemma-label'
 
 export default {
   components: { ConceptIcon, JumpToTop, LemmaLabel },
-  props: ['concept']
+  props: {
+    concept: {
+      type: Object,
+      required: true
+    },
+  },
 }
 </script>
 

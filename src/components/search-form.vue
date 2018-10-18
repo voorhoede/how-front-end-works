@@ -17,7 +17,12 @@ import SearchIcon from '../static/icons/search-icon.svg'
 
 export default {
   components: { SearchIcon },
-  props: ['placeholderText']
+  props: {
+    placeholderText: {
+      type: String,
+      required: true
+    },
+  },
 }
 </script>
 

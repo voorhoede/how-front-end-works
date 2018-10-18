@@ -29,7 +29,12 @@ import LemmaLabel from '../components/lemma-label'
 
 export default {
   components: { LemmaLabel },
-  props: ['lemma']
+  props: {
+    lemma: {
+      type: Object,
+      required: true
+    },
+  },
 }
 </script>
 

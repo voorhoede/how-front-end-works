@@ -6,7 +6,16 @@
 
 <script>
 export default {
-  props: ['backgroundColor', 'imageUrl']
+  props: {
+    backgroundColor: {
+      type: String,
+      required: false
+    },
+    imageUrl: {
+      type: String,
+      required: true
+    },
+  },
 }
 </script>
 

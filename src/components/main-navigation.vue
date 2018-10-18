@@ -17,7 +17,12 @@ import ConceptIcon from '../components/concept-icon'
 
 export default {
   components: { ConceptIcon },
-  props: ['concepts'],
+  props: {
+    concepts: {
+      type: Array,
+      required: true
+    },
+  },
   methods: {
     animateScrollToElement
   }

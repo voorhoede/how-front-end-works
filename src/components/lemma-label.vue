@@ -14,7 +14,16 @@ import ConceptIcon from '../components/concept-icon'
 
 export default {
   components: { ConceptIcon },
-  props: ['labelInfo', 'labelType']
+  props: {
+    labelInfo: {
+      type: Object,
+      required: true
+    },
+    labelType: {
+      type: String,
+      required: true
+    },
+  },
 }
 </script>
 

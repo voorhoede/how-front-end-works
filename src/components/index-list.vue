@@ -16,7 +16,20 @@
 
 <script>
 export default {
-  props: ['indexLetter', 'lemmaColor', 'lemmas']
+  props: {
+    indexLetter: {
+      type: String,
+      required: true
+    },
+    lemmaColor: {
+      type: String,
+      required: true
+    },
+    lemmas: {
+      type: Array,
+      required: true
+    },
+  },
 }
 </script>
 

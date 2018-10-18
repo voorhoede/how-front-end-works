@@ -24,7 +24,36 @@ import NavigationButton from '../components/navigation-button'
 
 export default {
   components: { MainNavigation, NavigationButton },
-  props: ['backgroundColor', 'buttonLabel', 'buttonUrl', 'concepts', 'description', 'image', 'title'],
+  props: {
+    backgroundColor: {
+      type: String,
+      required: true
+    },
+    buttonLabel: {
+      type: String,
+      required: false
+    },
+    buttonUrl: {
+      type: String,
+      required: false
+    },
+    concepts: {
+      type: Array,
+      required: false
+    },
+    description: {
+      type: String,
+      required: true
+    },
+    image: {
+      type: String,
+      required: false
+    },
+    title: {
+      type: String,
+      required: true
+    },
+  },
 }
 </script>
 

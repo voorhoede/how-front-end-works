@@ -12,7 +12,16 @@ import ArrowIcon from '../static/icons/arrow.svg'
 
 export default {
   components: { ArrowIcon },
-  props: ['label', 'url']
+  props: {
+    label: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    },
+  },
 }
 </script>
 
