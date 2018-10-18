@@ -39,7 +39,10 @@ export default {
       label: 'view alphabetical list',
       url: '/alphabetical-index',
     }
-  }
+  },
+  fetch({ route,store }) {
+    store.commit('setIndexPageUrl', { indexPageUrl: route.fullPath })
+  },
 }
 </script>
 
