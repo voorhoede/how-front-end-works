@@ -50,8 +50,11 @@ export default {
     return {
       label: 'view concepts',
       url: '/',
-      searchValue: undefined, 
+      searchValue: undefined,
     }
+  },
+  fetch({ store, route }) {
+    store.commit('setIndexPageUrl', { indexPageUrl: route.fullPath })
   },
   methods: {
     ignoreCaseSort(a, b) {
@@ -64,9 +67,9 @@ export default {
     filteredLemmas() {
       const searchValue = this.searchValue;
       const searchRegExp = new RegExp(searchValue, 'i')
-      
-      return searchValue 
-        ? this.page.lemmas.filter(lemma => searchRegExp.test(lemma.name)) 
+
+      return searchValue
+        ? this.page.lemmas.filter(lemma => searchRegExp.test(lemma.name))
         : this.page.lemmas
     },
     groupedLemmas() {

@@ -1,20 +1,18 @@
 <template>
-  <nuxt-link class="back-button" :to="previousUrl">
+  <nuxt-link class="back-button" :to="indexPageUrl">
     <arrow-icon class="back-button__icon" />
     <span class="back-button__content">Back to overview</span>
   </nuxt-link>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import ArrowIcon from '../static/icons/arrow.svg'
 
 export default {
   components: { ArrowIcon },
   computed: {
-    previousUrl() {
-      const referrer = this.$route.params.referrer === 'alphabetical' ? this.$route.params.referrer : 'index'
-      return { name: referrer }
-    }
+    ...mapState(['indexPageUrl']),
   }
 }
 </script>
