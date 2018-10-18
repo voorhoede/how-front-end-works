@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="{ name: labelType, params: { [labelType]: labelInfo.slug, referrer: $route.name }}"
+  <nuxt-link :to="toValue"
              class="label"
              :style="`background: ${labelInfo.color};`">
     <div class="label__link-area">
@@ -24,6 +24,15 @@ export default {
       required: true
     },
   },
+  computed: {
+    toValue() {
+      if (this.labelType === 'lemma') {
+        return { name: this.labelType, params: { 'lemma': this.labelInfo.slug } }
+      } else {
+        return { path: `/#${this.labelInfo.slug}` }
+      }
+    }
+  }
 }
 </script>
 
