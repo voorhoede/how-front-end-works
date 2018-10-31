@@ -21,6 +21,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
+
   /*
   ** Customize the progress bar color
   */
@@ -32,6 +33,7 @@ module.exports = {
       hostname: baseUrl,
       generate: true,
       exclude: ['/styles'],
+      routes: fs.readdirSync('./src/static/data/lemmas').map(file => file.replace('.json', ''))
     }],
   ],
 
