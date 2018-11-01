@@ -22,7 +22,7 @@
                     :lemmaColor="page.lemmaColor"
                     :lemmas="lemmas" />
         </div>
-        <div v-else class="alphabetical-index__no-results">No filter results</div>
+        <div v-else class="alphabetical-index__no-results" role="status" aria-live="polite">No filter results</div>
       </main>
 
       <app-footer :body="page.footer" />
