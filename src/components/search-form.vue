@@ -6,7 +6,9 @@
              class="search-form__input"
              type="text"
              id="search"
-             :placeholder="placeholderText">
+             :placeholder="placeholderText"
+             @focus="toggleSearchStatus"
+             @blur="toggleSearchStatus">
       <search-icon class="search-form__icon" />
     </label>
   </form>
@@ -22,6 +24,17 @@ export default {
       type: String,
       required: true
     },
+  },
+  data() {
+    return {
+      isSearching: false,
+    }
+  },
+  methods: {
+    toggleSearchStatus() {
+      this.isSearching = !this.isSearching
+      this.$emit('toggleSearchStatus', this.isSearching)
+    }
   },
 }
 </script>

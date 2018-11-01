@@ -1,28 +1,39 @@
 <template>
     <div class="site-content">
       <app-header :backgroundColor="page.headerColor"
-              :buttonLabel="label"
-              :buttonUrl="url"
-              :concepts="page.concepts"
-              :description="page.introduction"
-              :image="page.headerImage"
-              :title="page.title" />
+                  :buttonLabel="label"
+                  :buttonUrl="url"
+                  :concepts="page.concepts"
+                  :description="page.introduction"
+                  :image="page.headerImage"
+                  :title="page.title" />
 
       <main class="site-content__main center-column">
         <h2 class="a11y-sr-only">Filter techniques</h2>
 
-        <search-form v-model="searchValue" placeholderText="Filter techniques" />
+        <search-form v-model="searchValue" placeholderText="Filter techniques" @toggleSearchStatus="getSearchStatus" />
 
         <h2 class="a11y-sr-only">Techniques</h2>
 
         <div v-if="filteredLemmas.length" class="alphabetical-index">
           <index-list v-for="(lemmas, key) in sortedGroupedLemmas"
-                    :key="key"
-                    :indexLetter="key"
-                    :lemmaColor="page.lemmaColor"
-                    :lemmas="lemmas" />
+                      :key="key"
+                      :indexLetter="key"
+                      :lemmaColor="page.lemmaColor"
+                      :lemmas="lemmas" />
+          <div v-if="isSearching"
+               class="a11y-sr-only"
+               role="status"
+               aria-live="polite">
+            {{ filteredLemmas.length }} {{ filteredLemmas.length === 1 ? 'filter result' : 'filter results' }}
+          </div>
         </div>
-        <div v-else class="alphabetical-index__no-results">No filter results</div>
+        <div v-else
+             class="alphabetical-index__no-results"
+             role="status"
+             aria-live="polite">
+          No filter results
+        </div>
       </main>
 
       <app-footer :body="page.footer" />
@@ -51,6 +62,7 @@ export default {
       label: 'view concepts',
       url: '/',
       searchValue: undefined,
+      isSearching: false,
     }
   },
   fetch({ store, route }) {
@@ -61,6 +73,9 @@ export default {
       const a_lower = a.name.toLowerCase()
       const b_lower = b.name.toLowerCase()
       return ((a_lower > b_lower) ? 1 : ((b_lower > a_lower) ? -1 : 0))
+    },
+    getSearchStatus(searchStatus) {
+      this.isSearching = searchStatus
     }
   },
   computed: {
