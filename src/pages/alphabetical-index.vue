@@ -21,6 +21,7 @@
                     :indexLetter="key"
                     :lemmaColor="page.lemmaColor"
                     :lemmas="lemmas" />
+          <div class="a11y-sr-only" role="status" aria-live="polite">{{ filteredLemmas.length }} {{ filteredLemmas.length === 1 ? 'filter result' : 'filter results' }}</div>
         </div>
         <div v-else class="alphabetical-index__no-results" role="status" aria-live="polite">No filter results</div>
       </main>
