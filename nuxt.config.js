@@ -1,6 +1,5 @@
 const fs = require('fs')
-const baseUrl = ''
-const isProduction = (process.env.NODE_ENV === 'production')
+const baseUrl = process.env.URL
 
 module.exports = {
   srcDir: 'src/',
