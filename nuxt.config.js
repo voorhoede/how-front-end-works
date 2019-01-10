@@ -65,6 +65,7 @@ module.exports = {
           if (to.hash && document.querySelector(to.hash)) {
             // scroll to anchor by returning the selector
             position = { selector: to.hash }
+            document.querySelector(to.hash).focus()
           }
           resolve(position)
         })

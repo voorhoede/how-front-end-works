@@ -1,5 +1,5 @@
 <template>
-  <section :id="concept.slug" class="concept">
+  <section :id="concept.slug" class="concept" tabindex="-1">
     <img class="concept__image" :src="concept.image" alt="">
 
     <h2 class="concept__title h1">
@@ -42,6 +42,7 @@ export default {
 
 .concept {
   padding-top: var(--spacing-default);
+  outline: none;
 }
 
 .concept__title {
