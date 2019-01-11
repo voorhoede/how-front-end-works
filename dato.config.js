@@ -91,7 +91,7 @@ function generateLemmas(dato, root, i18n) {
       footer: dato.siteInfo.footer,
       headerColor: dato.siteInfo.headerColor.hex,
       image: lemma.image ? lemma.image.url() : '',
-      introduction: dato.siteInfo.introduction,
+      shortIntroduction: dato.siteInfo.shortIntroduction,
       name: lemma.name,
       relatedLemmas: lemma.relatedLemmas.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
                                         .map(relatedLemma => {

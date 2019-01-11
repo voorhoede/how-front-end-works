@@ -1,7 +1,7 @@
 <template>
   <div class="site-content">
     <app-header :backgroundColor="page.headerColor"
-            :description="page.introduction"
+            :description="page.shortIntroduction"
             :title="page.title" />
 
     <main class="site-content__main center-column" role="main">
