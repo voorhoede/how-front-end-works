@@ -4,7 +4,7 @@
                 :title="page.title" />
 
     <main class="site-content__main center-column" role="main">
-      <back-button />
+      <back-button class="site-content__back-button" />
 
       <lemma-block :lemma="page" />
     </main>

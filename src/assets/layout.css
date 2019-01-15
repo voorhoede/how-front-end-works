@@ -22,3 +22,7 @@ body {
         width: 600px;
     }
 }
+
+.site-content__back-button {
+    margin-top: var(--spacing-half);
+}
