@@ -1,8 +1,8 @@
 <template>
     <div class="site-content">
       <app-header :backgroundColor="page.headerColor"
-                  :buttonLabel="label"
-                  :buttonUrl="url"
+                  :buttonLabel="page.headerButton.label"
+                  :buttonUrl="page.headerButton.url"
                   :concepts="page.concepts"
                   :description="page.introduction"
                   :image="page.headerImage"
@@ -59,8 +59,6 @@ export default {
   },
   data() {
     return {
-      label: 'view concepts',
-      url: '/',
       searchValue: undefined,
       isSearching: false,
     }

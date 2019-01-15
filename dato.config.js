@@ -9,6 +9,10 @@ module.exports = (dato, root, i18n) => {
 function generateAlphabeticalIndex(dato, root, i18n) {
   root.createDataFile(`${dataDir}alphabetical-index.json`, 'json', {
     footer: dato.siteInfo.footer,
+    headerButton: {
+      label: dato.siteInfo.alphabeticalPageHeaderButton.label,
+      url: dato.siteInfo.alphabeticalPageHeaderButton.url
+    },
     headerColor: dato.siteInfo.headerColor.hex,
     introduction: dato.siteInfo.introduction,
     lemmaColor: dato.siteInfo.lemmaColor.hex,
@@ -54,6 +58,10 @@ function generateIndex(dato, root, i18n) {
       }
     }),
     footer: dato.siteInfo.footer,
+    headerButton: {
+      label: dato.siteInfo.indexPageHeaderButton.label,
+      url: dato.siteInfo.indexPageHeaderButton.url
+    },
     headerColor: dato.siteInfo.headerColor.hex,
     headerImage: dato.siteInfo.headerImage.url(),
     introduction: dato.siteInfo.introduction,
