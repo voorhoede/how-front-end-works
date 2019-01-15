@@ -1,16 +1,19 @@
 <template>
   <header role="banner">
-    <div :class="`header ${ image ? 'header--big' : '' }`" :style="`background-color: ${backgroundColor};`">
+    <div class="header" :style="`background-color: ${backgroundColor};`">
       <div class="center-column">
         <h1 class="header__title">
           <nuxt-link to="/">{{ title }}</nuxt-link>
         </h1>
 
-        <div class="header__description" v-html="description"></div>
+        <div v-if="description" class="header__description" v-html="description"></div>
 
         <img v-if="image" class="header__image" :src="image" alt="">
 
-        <navigation-button v-if="buttonLabel" :url="buttonUrl" :label="buttonLabel" />
+        <navigation-button v-if="buttonLabel"
+                           class="header__button"
+                           :url="buttonUrl"
+                           :label="buttonLabel" />
       </div>
     </div>
 
@@ -43,7 +46,7 @@ export default {
     },
     description: {
       type: String,
-      required: true
+      required: false
     },
     image: {
       type: String,
@@ -68,11 +71,7 @@ export default {
 
 @media (min-width: 600px) {
   .header {
-    padding: calc(var(--spacing-double) * 2) 0;
-  }
-
-  .header--big {
-    padding: var(--spacing-default) 0 var(--spacing-double) 0;
+    padding: var(--spacing-default) 0;
   }
 }
 
@@ -122,13 +121,13 @@ export default {
   }
 }
 
-.header .button {
-  margin-top: var(--spacing-default);
+.header__button {
+  margin: var(--spacing-default) 0;
 }
 
 @media (min-width: 600px) {
-  .header .button {
-    margin-top: var(--spacing-double);
+  .header__button {
+    margin: var(--spacing-double) 0;
   }
 }
 </style>

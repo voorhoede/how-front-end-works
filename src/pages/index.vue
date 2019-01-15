@@ -1,8 +1,8 @@
 <template>
   <div class="site-content">
     <app-header :backgroundColor="page.headerColor"
-            :buttonLabel="label"
-            :buttonUrl="url"
+            :buttonLabel="page.headerButton.label"
+            :buttonUrl="page.headerButton.url"
             :concepts="page.concepts"
             :description="page.introduction"
             :image="page.headerImage"
@@ -33,12 +33,6 @@ export default {
   },
   head() {
     return seoHead(this.page.seo)
-  },
-  data() {
-    return {
-      label: 'view alphabetical list',
-      url: '/alphabetical-index',
-    }
   },
   fetch({ route,store }) {
     store.commit('setIndexPageUrl', { indexPageUrl: route.fullPath })

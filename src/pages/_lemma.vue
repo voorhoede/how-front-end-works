@@ -1,8 +1,7 @@
 <template>
   <div class="site-content">
     <app-header :backgroundColor="page.headerColor"
-            :description="page.shortIntroduction"
-            :title="page.title" />
+                :title="page.title" />
 
     <main class="site-content__main center-column" role="main">
       <back-button />
