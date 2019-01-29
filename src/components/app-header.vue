@@ -1,14 +1,16 @@
 <template>
   <header role="banner">
-    <div class="header" :style="`background-color: ${backgroundColor};`">
-      <div class="center-column">
+    <div class="header" :class="{ 'header--big': isBig }" :style="`background-color: ${backgroundColor};`">
+      <div class="header__column center-column">
         <h1 class="header__title">
           <nuxt-link to="/">{{ title }}</nuxt-link>
         </h1>
 
         <div v-if="description" class="header__description" v-html="description"></div>
 
-        <img v-if="image" class="header__image" :src="image" alt="">
+        <div v-if="image" class="header__image">
+          <img :src="image" alt="">
+        </div>
 
         <navigation-button v-if="buttonLabel"
                            class="header__button"
@@ -56,6 +58,10 @@ export default {
       type: String,
       required: true
     },
+    isBig: {
+      type: Boolean,
+      required: false
+    },
   },
 }
 </script>
@@ -72,6 +78,16 @@ export default {
 @media (min-width: 600px) {
   .header {
     padding: var(--spacing-default) 0;
+  }
+
+  .header--big {
+    height: 93vh;
+  }
+
+  .header--big .header__column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 }
 
@@ -94,7 +110,7 @@ export default {
 
 @media (min-width: 600px) {
   .header__title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 }
 
@@ -103,21 +119,25 @@ export default {
   line-height: 1.5;
 }
 
-@media (min-width: 600px) {
-  .header__description {
-    font-size: var(--font-size-bigger);
-  }
-}
-
 .header__image {
   margin-top: var(--spacing-default);
+}
+
+.header__image img {
   width: 100%;
   height: auto;
 }
 
 @media (min-width: 600px) {
   .header__image {
+    flex: 1 1 auto;
     margin-top: var(--spacing-double);
+    height: 1%;
+  }
+
+  .header__image img {
+    width: auto;
+    height: 100%;
   }
 }
 
@@ -127,6 +147,7 @@ export default {
 
 @media (min-width: 600px) {
   .header__button {
+    align-self: center;
     margin: var(--spacing-double) 0;
   }
 }

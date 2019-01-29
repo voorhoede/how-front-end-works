@@ -6,7 +6,8 @@
             :concepts="page.concepts"
             :description="page.introduction"
             :image="page.headerImage"
-            :title="page.title" />
+            :title="page.title"
+            :isBig="true" />
 
     <main class="site-content__main center-column">
       <concept-block v-for="concept in page.concepts"
