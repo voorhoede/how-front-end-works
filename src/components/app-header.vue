@@ -1,21 +1,24 @@
 <template>
   <header role="banner">
-    <div class="header" :class="{ 'header--big': isBig }" :style="`background-color: ${backgroundColor};`">
+    <div class="header" :class="{ 'header--big': isBig }" :style="!isBig && `background-color: ${backgroundColor};`">
       <div class="header__column center-column">
         <h1 class="header__title">
-          <nuxt-link to="/">{{ title }}</nuxt-link>
+          <!-- <nuxt-link to="/">{{ title }}</nuxt-link> -->
+          <nuxt-link to="/">How front-end <span class="header__title--bold">works</span></nuxt-link>
         </h1>
 
-        <div v-if="description" class="header__description" v-html="description"></div>
+        <div v-if="description" class="header__description"><p>Everything you wanted to know but W3Schools taught you wrong.</p></div>
 
-        <div v-if="image" class="header__image">
-          <img :src="image" alt="">
-        </div>
+
 
         <navigation-button v-if="buttonLabel"
                            class="header__button"
                            :url="buttonUrl"
                            :label="buttonLabel" />
+      </div>
+      <div v-if="image" class="header__image">
+        <!-- <img :src="image" alt=""> -->
+        <header-image />
       </div>
     </div>
 
@@ -26,9 +29,10 @@
 <script>
 import MainNavigation from '../components/main-navigation'
 import NavigationButton from '../components/navigation-button'
+import HeaderImage from '~/static/icons/image.svg'
 
 export default {
-  components: { MainNavigation, NavigationButton },
+  components: { MainNavigation, NavigationButton, HeaderImage },
   props: {
     backgroundColor: {
       type: String,
@@ -69,34 +73,125 @@ export default {
 <style>
 @import '../assets/variables.css';
 
-.header {
-  margin-bottom: var(--spacing-default);
-  padding: var(--spacing-double);
+.header:not(.header--big) {
+  padding: var(--spacing-default) 0;
+  margin-bottom: var(--spacing-double);
+}
+
+.header.header--big {
   text-align: center;
 }
 
-@media (min-width: 600px) {
-  .header {
-    padding: var(--spacing-default) 0;
-  }
-
-  .header--big {
-    height: 93vh;
-  }
-
-  .header--big .header__column {
+@media (min-width: 768px) {
+  .header.header--big {
     display: flex;
-    flex-direction: column;
-    height: 100%;
+    padding: 0;
+    text-align: left;
   }
 }
 
+.header--big .header__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: var(--spacing-double);
+  width: 100%;
+  height: var(--header-column-height);
+  background-color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .header--big .header__column {
+    order: 2;
+    align-items: baseline;
+    padding: 0 var(--spacing-double);
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header--big .header__column {
+    padding: 0 4rem;
+  }
+}
+
+.header__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-half);
+  height: var(--header-column-height);
+  background-color: var(--accent-color-light);
+}
+
+@media (min-width: 768px) {
+  .header__image {
+    order: 1;
+    margin-top: 0;
+    padding: var(--spacing-double);
+    z-index: 2;
+    width: 50vw;
+  }
+}
+
+.header__image img {
+  width: 100%;
+  height: auto;
+}
+
+.header__image svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
 .header__title {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: 0;
   font-family: var(--font);
+  font-size: var(--font-size-big);
   font-style: normal;
   font-weight: bold;
-  font-size: var(--font-size-large);
+}
+
+.header--big .header__title {
+  margin-bottom: var(--spacing-default);
+  font-size: var(--header-title-size);
+  line-height: normal;
+}
+
+@media (min-width: 768px) {
+  .header--big .header__title {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .header__title:before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    bottom: -1rem;
+    width: 30vw;
+    height: 1px;
+    border-bottom: 2px solid var(--accent-color-light);
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__title:before {
+    width: 25vw;
+    left: -4rem;
+  }
+}
+
+.header__title--bold {
+  color: var(--accent-color-dark);
+}
+
+.header--big .header__title--bold {
+  font-size: calc(var(--header-title-size) * 1.4);
+  display: block
 }
 
 .header__title a {
@@ -108,47 +203,89 @@ export default {
   border-bottom: 1px solid var(--grey-dark);
 }
 
-@media (min-width: 600px) {
-  .header__title {
-    font-size: 2.3rem;
-  }
-}
-
 .header__description {
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-default);
   line-height: 1.5;
 }
 
-.header__image {
-  margin-top: var(--spacing-default);
-}
-
-.header__image img {
-  width: 100%;
-  height: auto;
-}
-
-@media (min-width: 600px) {
-  .header__image {
-    flex: 1 1 auto;
-    margin-top: var(--spacing-double);
-    height: 1%;
-  }
-
-  .header__image img {
-    width: auto;
-    height: 100%;
+@media (min-width: 360px) {
+  .header__description {
+    margin-bottom: var(--spacing-double);
   }
 }
 
-.header__button {
+@media (min-width: 768px) {
+  .header__description {
+    font-size: var(--font-size-big);
+  }
+}
+
+@media (min-width: 1300px) {
+  .header__description {
+    max-width: 35vw;
+  }
+}
+
+.button.header__button {
   margin: var(--spacing-default) 0;
+  border: 1px solid var(--accent-color-dark);
+  color: var(--accent-color-dark);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .header__button {
-    align-self: center;
-    margin: var(--spacing-double) 0;
+    margin-bottom: 0;
   }
 }
+
+.button.header__button svg path {
+  fill: var(--accent-color-dark);
+}
+
+text {
+  opacity: 0;
+}
+/*
+@media (min-width: 1024px) {
+  text,
+  .circle {
+    transition: all .2s ease;
+  }
+
+  .header:hover text {
+    opacity: 1;
+  }
+
+  .header:hover .circle {
+    transform: scale(4);
+  }
+
+  #cloud .circle {
+    transform-origin: 134.17px 36.73px;
+  }
+
+  #design .circle {
+    transform-origin: 508.53px 84.11px;
+  }
+
+  #architecture .circle {
+    transform-origin: 49.62px 263.45px;
+  }
+
+  #development .circle {
+    transform-origin: 461.08px 497.31px;
+  }
+
+  #version-control .circle {
+    transform-origin: 153.96px 394.84px;
+  }
+
+  #configuration .circle {
+    transform-origin: 246.02px 283.63px;
+  }
+
+  #code .circle {
+    transform-origin: 386.28px 213.34px;
+  }
+} */
 </style>

@@ -34,13 +34,23 @@ export default {
 
 .navigation {
   margin-bottom: var(--spacing-default);
-  border-bottom: 1px solid var(--grey-medium);
+  border-bottom: 2px solid var(--accent-color-light);
+  padding: 3rem 0;
+  min-height: var(--navigation-height);
 }
 
 @media (min-width: 600px) {
   .navigation {
     margin-bottom: calc(var(--spacing-default) * 3);
-    padding: var(--spacing-default) 0;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 980px) {
+  .navigation {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
   }
 }
 
