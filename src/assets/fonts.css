@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "ibmplexsans";
+  src: url('~/static/fonts/ibmplexsans-regular.woff2') format('woff2'),
+       url('~/static/fonts/ibmplexsans-regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ibmplexsans";
+  src: url('~/static/fonts/ibmplexsans-semibold.woff2') format('woff2'),
+       url('~/static/fonts/ibmplexsans-semibold.woff') format('woff');
+  font-weight: bold;
+  font-display: swap;
+}
