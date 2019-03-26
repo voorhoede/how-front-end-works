@@ -12,8 +12,8 @@
                            class="header__button"
                            :url="buttonUrl"
                            :label="buttonLabel" />
-        <div v-if="conceptIcon" class="header__concept-icon">
-          <img class="header__icon" :src="conceptIcon" />
+        <div v-if="conceptIcon" class="header__image">
+          <img class="header__concept-icon" :src="conceptIcon" />
         </div>
       </div>
       <div v-if="image" class="header__image">
@@ -91,10 +91,6 @@ export default {
   position: relative;
 }
 
-.header:not(.header-big):after {
-  background-image: url
-}
-
 .header.header--big {
   text-align: center;
 }
@@ -105,14 +101,14 @@ export default {
   }
 }
 
-.header__concept-icon {
+.header:not(.header--big) .header__image {
   position: relative;
   width: 100px;
   height: 100px;
   opacity: .2;
 }
 
-.header__icon {
+.header__concept-icon {
   position: absolute;
   right: -1rem;
   top: 0;
@@ -121,12 +117,12 @@ export default {
 }
 
 @media (min-width: 500px) {
-  .header__concept-icon {
+  .header:not(.header--big) .header__image {
     width: 150px;
     height: 150px;
   }
 
-  .header__icon {
+  .header__concept-icon {
     right: 0;
   }
 }
@@ -171,11 +167,11 @@ export default {
 
 @media (min-width: 1024px) {
   .header--big .header__column {
-    padding: 0 3rem;
+    padding: 0 calc(var(--spacing-default) * 3);
   }
 }
 
-.header__image {
+.header--big .header__image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,7 +181,7 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .header__image {
+  .header--big .header__image {
     order: 1;
     margin-top: 0;
     padding: var(--spacing-double);
@@ -195,12 +191,12 @@ export default {
   }
 }
 
-.header__image img {
+.header--big .header__image img {
   width: 100%;
   height: auto;
 }
 
-.header__image svg {
+.header--big .header__image svg {
   width: 100%;
   height: 100%;
   overflow: visible;
@@ -223,7 +219,7 @@ export default {
 @media (min-width: 768px) {
   .header--big .header__title {
     position: relative;
-    margin-bottom: 3rem;
+    margin-bottom: calc(var(--spacing-default) * 3);
     text-align: left;
   }
 

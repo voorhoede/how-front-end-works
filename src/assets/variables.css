@@ -26,35 +26,29 @@
   --font-size-small: .8rem;
 
   /* APP HEADER */
-  --header-column-height: 50vh;
-  --navigation-height: auto;
-  --header-title-size: 27px;
+  --header-title-size: --font-size-large;
 }
 
 @media (min-width: 360px) {
   :root {
-    --header-title-size: 35px;
+    --header-title-size: calc(var(--font-size-default) * 2);
   }
 }
 
 @media (min-width: 600px) {
   :root {
-    --header-title-size: 2.3rem;
+    --header-title-size: calc(var(--font-size-bigger) * 2);
   }
 }
 
 @media (min-width: 768px) {
   :root {
-    --header-column-height: 70vh;
-    --navigation-height: 30vh;
-    --header-title-size: 45px;
+    --header-title-size: calc(var(--font-size-big) * 2);
   }
 }
 
 @media (min-width: 1024px) and (min-height: 980px) {
   :root {
-    --header-column-height: 65vh;
-    --navigation-height: 35vh;
-    --header-title-size: 55px;
+    --header-title-size: calc(var(--font-size-large) * 2);
   }
 }
