@@ -56,7 +56,7 @@ export default {
 .lemma__title {
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: 1.5rem;
 }
 
 .lemma__image {
@@ -67,12 +67,13 @@ export default {
 }
 
 .lemma__description {
-  margin-bottom: var(--spacing-default);
+  margin-bottom: calc(var(--spacing-default) * 3);
 }
 
 .lemma__labels {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: var(--spacing-default);
 }
 
 .lemma__labels li {

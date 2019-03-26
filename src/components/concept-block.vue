@@ -48,7 +48,7 @@ export default {
 .concept__title {
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: 1.5rem;
 }
 
 .concept .concept-icon {
@@ -72,7 +72,7 @@ export default {
 }
 
 .concept__description {
-  margin-bottom: var(--spacing-default);
+  margin-bottom: calc(var(--spacing-default) * 3);
 }
 
 .concept__labels {
