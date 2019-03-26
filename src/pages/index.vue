@@ -1,13 +1,13 @@
 <template>
   <div class="site-content">
-    <app-header :backgroundColor="page.headerColor"
-            :buttonLabel="page.headerButton.label"
+    <app-header :buttonLabel="page.headerButton.label"
             :buttonUrl="page.headerButton.url"
             :concepts="page.concepts"
             :description="page.introduction"
             :image="page.headerImage"
             :title="page.title"
-            :isBig="true" />
+            :isBig="true"
+            class="site-content__app-header"/>
 
     <main class="site-content__main center-column">
       <concept-block v-for="concept in page.concepts"
@@ -50,5 +50,9 @@ export default {
   .concept {
     margin-bottom: calc(var(--spacing-default) * 5);
   }
+}
+
+.site-content__app-header {
+  margin-bottom: calc(var(spacing-double * 2));
 }
 </style>
