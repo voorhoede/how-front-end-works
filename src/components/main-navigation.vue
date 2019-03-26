@@ -53,6 +53,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
   max-width: 600px;
   margin: 0;
 }

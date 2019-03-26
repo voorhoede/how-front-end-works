@@ -162,7 +162,7 @@ export default {
 @media (min-width: 768px) {
   .header--big .header__column {
     order: 2;
-    align-items: baseline;
+    align-items: flex-start;
     padding: 0 var(--spacing-double);
     width: 50vw;
     height: 70vh;
