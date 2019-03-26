@@ -19,7 +19,7 @@
 .scroll-to {
   display: flex;
   position: absolute;
-  bottom: 1rem;
+  bottom: 1.5rem;
   left: .5rem;
   z-index: var(--z-index-low);
   width: 32px;
