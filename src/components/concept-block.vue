@@ -45,9 +45,10 @@ export default {
 
 .concept__title {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: var(--spacing-double) 0;
+  margin-top: calc(var(--spacing-double) * 2);
 }
 
 .concept__image {
@@ -57,7 +58,18 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
-  margin-right: var(--spacing-double);
+  margin-bottom: var(--spacing-double);
+}
+
+@media (min-width: 420px) {
+  .concept__title {
+    flex-direction: row;
+  }
+
+  .concept__image {
+    margin-bottom: 0;
+    margin-right: var(--spacing-double);
+  }
 }
 
 @media (min-width: 1100px) {
