@@ -242,17 +242,19 @@ export default {
 }
 
 .header__title--highlight {
-  font-size: var(--font-size-big);
+  font-size: calc(var(--font-size-big) * 1.3);
   color: var(--accent-color-dark);
-}
-
-.header .header__title--highlight {
-  font-size: var(--header-title-size);
 }
 
 .header--big .header__title--highlight {
   font-size: calc(var(--header-title-size) * 1.4);
   display: block
+}
+
+@media (min-width: 768px) {
+  .header__title--highlight {
+    text-align: left;
+  }
 }
 
 .header__title a,
