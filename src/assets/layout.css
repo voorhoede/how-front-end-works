@@ -1,7 +1,3 @@
-body {
-    background-color: var(--grey-light);
-}
-
 .site-content {
     display: flex;
     flex-direction: column;
@@ -24,5 +20,5 @@ body {
 }
 
 .site-content__back-button {
-    margin-top: var(--spacing-half);
+    margin-top: var(--spacing-double);
 }

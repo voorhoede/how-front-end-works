@@ -1,5 +1,5 @@
 <template>
-  <nav id="top" class="navigation center-column" role="navigation">
+  <nav id="top" class="navigation" role="navigation">
     <ul class="flat-list">
       <li class="navigation__item" v-for="concept in concepts" :key="concept.slug">
         <a @click.prevent="animateScrollToElement('#' + concept.slug)" :href="'#' + concept.slug">
@@ -33,14 +33,19 @@ export default {
 @import '../assets/variables.css';
 
 .navigation {
-  margin-bottom: var(--spacing-default);
-  border-bottom: 1px solid var(--grey-medium);
+  min-height: 35%;
+  background-color: var(--grey-light);
+  width: 100%;
+  padding: calc(var(--spacing-default) * 3) var(--spacing-double);
 }
 
-@media (min-width: 600px) {
+
+@media (min-width: 768px) {
   .navigation {
-    margin-bottom: calc(var(--spacing-default) * 3);
-    padding: var(--spacing-default) 0;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -48,6 +53,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
 }
 
 .navigation__item {

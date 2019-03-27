@@ -1,7 +1,6 @@
 <template>
   <div class="site-content">
-    <app-header :backgroundColor="page.headerColor"
-                :title="page.title" />
+    <app-header :title="page.title" :concept-icon="page.concepts[0].icon"/>
 
     <main class="site-content__main center-column" role="main">
       <back-button class="site-content__back-button" />
