@@ -1,9 +1,7 @@
 <template>
   <section :id="concept.slug" class="concept" tabindex="-1">
-    <img class="concept__image" :src="concept.image" alt="">
-
     <h2 class="concept__title h1">
-      <concept-icon :backgroundColor="concept.color" :imageUrl="concept.icon" />
+      <div class="concept__image" :style="`background-image: url('${concept.image}'; background-color: ${concept.color}`" />
       {{ concept.name }}
     </h2>
 
@@ -22,12 +20,11 @@
 </template>
 
 <script>
-import ConceptIcon from '../components/concept-icon'
 import JumpToTop from '../components/jump-to-top'
 import LemmaLabel from '../components/lemma-label'
 
 export default {
-  components: { ConceptIcon, JumpToTop, LemmaLabel },
+  components: { JumpToTop, LemmaLabel },
   props: {
     concept: {
       type: Object,
@@ -41,38 +38,61 @@ export default {
 @import '../assets/variables.css';
 
 .concept {
-  padding-top: var(--spacing-default);
+  margin-top: var(--spacing-default);
   outline: none;
+  position: relative;
 }
 
 .concept__title {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: var(--spacing-half);
-}
-
-.concept .concept-icon {
-  margin-right: var(--spacing-default);
-  width: 3rem;
-  height: 3rem;
-}
-
-@media (min-width: 800px) {
-  .concept .concept-icon {
-    margin-right: 1.5rem;
-    margin-left: -4.5rem;
-  }
+  justify-content: flex-start;
+  margin-top: calc(var(--spacing-double) * 2);
 }
 
 .concept__image {
-  margin-bottom: var(--spacing-default);
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-bottom: var(--spacing-double);
+}
+
+@media (min-width: 420px) {
+  .concept__title {
+    flex-direction: row;
+  }
+
+  .concept__image {
+    margin-bottom: 0;
+    margin-right: var(--spacing-double);
+  }
+}
+
+@media (min-width: 1100px) {
+  .concept {
+    margin-top: var(--spacing-double);
+  }
+
+  .concept__title {
+    margin: 0;
+    margin-bottom: var(--spacing-double);
+  }
+
+  .concept__image {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    left: -180px;
+    top: 0;
+  }
 }
 
 .concept__description {
-  margin-bottom: var(--spacing-default);
+  margin-bottom: calc(var(--spacing-default) * 3);
 }
 
 .concept__labels {
@@ -82,6 +102,6 @@ export default {
 
 .concept__labels li {
   margin-right: var(--spacing-default);
-  margin-bottom: var(--spacing-default);
+  margin-bottom: var(--spacing-half);
 }
 </style>

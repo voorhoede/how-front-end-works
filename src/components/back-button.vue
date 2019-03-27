@@ -21,17 +21,19 @@ export default {
 @import '../assets/variables.css';
 
 .back-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-default);
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-double);
   padding-bottom: 0;
   background: none;
   font-size: var(--font-size-smaller);
   border: none;
+  text-align: right;
+  right: 0;
 }
 
 .back-button__icon {
-  display: inline-block;
   transform: rotate(-90deg);
   margin-right: var(--spacing-half);
   width: 1rem;
@@ -82,31 +84,6 @@ export default {
   .back-button__icon {
     width: 1.2rem;
     height: 1.2rem;
-  }
-}
-
-@media (min-width: 920px) {
-  .back-button {
-    float: left;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-left: -140px;
-  }
-
-  .back-button__icon {
-    margin-right: 0;
-  }
-
-  @keyframes bounce-arrow-left {
-    0% {
-      margin-right: 0;
-    }
-    50% {
-      margin-right: 3px;
-    }
-    100% {
-      margin-right: 0;
-    }
   }
 }
 </style>
