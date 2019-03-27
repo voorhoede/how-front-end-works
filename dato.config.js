@@ -14,6 +14,7 @@ function generateAlphabeticalIndex(dato, root, i18n) {
       url: dato.siteInfo.alphabeticalPageHeaderButton.url
     },
     headerColor: dato.siteInfo.headerColor.hex,
+    headerImage: dato.siteInfo.seo.image.url(),
     introduction: dato.siteInfo.introduction,
     lemmaColor: dato.siteInfo.lemmaColor.hex,
     lemmas: dato.lemmata.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))

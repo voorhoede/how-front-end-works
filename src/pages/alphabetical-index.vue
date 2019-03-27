@@ -1,6 +1,7 @@
 <template>
     <div class="site-content">
       <app-header :concepts="page.concepts"
+                  :concept-icon="page.headerImage"
                   :title="page.title" />
 
       <main class="site-content__main center-column">
