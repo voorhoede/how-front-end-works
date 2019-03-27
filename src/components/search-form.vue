@@ -42,11 +42,18 @@ export default {
 <style>
 @import '../assets/variables.css';
 
+.search-form {
+  width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--grey-medium);
+  margin-bottom: calc(var(--spacing-default) * 3);
+}
+
 .search-form__label {
   position: relative;
-  margin: 0 auto calc(var(--spacing-default) * 3) auto;
   display: block;
-  width: 50%;
+  width: 100%;
+  max-width: 320px;
 }
 
 .search-form__input {
@@ -61,7 +68,7 @@ export default {
 
 .search-form__input:focus {
   outline: none;
-  border: 1px solid var(--grey-dark);
+  border: 1px solid var(--accent-color);
 }
 
 .search-form__icon {
@@ -72,9 +79,5 @@ export default {
   height: 1.1rem;
   fill: var(--grey-medium);
   transition: fill .08s linear;
-}
-
-.search-form__input:focus ~ .search-form__icon {
-  fill: var(--grey-dark);
 }
 </style>
