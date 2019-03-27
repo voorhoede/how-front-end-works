@@ -1,11 +1,6 @@
 <template>
     <div class="site-content">
-      <app-header :backgroundColor="page.headerColor"
-                  :buttonLabel="page.headerButton.label"
-                  :buttonUrl="page.headerButton.url"
-                  :concepts="page.concepts"
-                  :description="page.introduction"
-                  :image="page.headerImage"
+      <app-header :concepts="page.concepts"
                   :title="page.title" />
 
       <main class="site-content__main center-column">
