@@ -112,7 +112,7 @@ export default {
   position: absolute;
   right: -1rem;
   top: 0;
-  transform: rotate(25deg);
+  transform: rotate(15deg);
   transform-origin: center;
 }
 

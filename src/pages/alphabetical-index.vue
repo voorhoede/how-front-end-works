@@ -1,14 +1,12 @@
 <template>
     <div class="site-content">
-      <app-header :backgroundColor="page.headerColor"
-                  :buttonLabel="page.headerButton.label"
-                  :buttonUrl="page.headerButton.url"
-                  :concepts="page.concepts"
-                  :description="page.introduction"
-                  :image="page.headerImage"
+      <app-header :concepts="page.concepts"
+                  :concept-icon="page.headerImage"
                   :title="page.title" />
 
       <main class="site-content__main center-column">
+        <back-button class="site-content__back-button" />
+
         <h2 class="a11y-sr-only">Filter techniques</h2>
 
         <search-form v-model="searchValue" placeholderText="Filter techniques" @toggleSearchStatus="getSearchStatus" />
@@ -43,13 +41,14 @@
 <script>
 import AppFooter from '../components/app-footer'
 import AppHeader from '../components/app-header'
+import BackButton from '../components/back-button'
 import getPageData from '../lib/get-page-data'
 import seoHead from '../lib/seo-head'
 import IndexList from '../components/index-list'
 import SearchForm from '../components/search-form'
 
 export default {
-  components: { AppFooter, AppHeader, IndexList, SearchForm },
+  components: { AppFooter, BackButton, AppHeader, IndexList, SearchForm },
   async asyncData() {
     const page = await getPageData('alphabetical-index')
     return { page }
