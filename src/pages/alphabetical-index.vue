@@ -1,12 +1,10 @@
 <template>
     <div class="site-content">
-      <app-header :concepts="page.concepts"
-                  :concept-icon="page.headerImage"
+      <app-header :buttonLabel="page.headerButton.label"
+                  :buttonUrl="page.headerButton.url"
                   :title="page.title" />
 
       <main class="site-content__main center-column">
-        <back-button class="site-content__back-button" />
-
         <h2 class="a11y-sr-only">Filter techniques</h2>
 
         <search-form v-model="searchValue" placeholderText="Filter techniques" @toggleSearchStatus="getSearchStatus" />
