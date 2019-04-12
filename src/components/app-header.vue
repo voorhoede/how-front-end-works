@@ -104,8 +104,17 @@ export default {
 }
 
 .button.header__button {
+  flex: 0 0 auto;
+  margin-left: var(--spacing-half);
   border: 1px solid var(--accent-color-dark);
+  font-size: var(--font-size-smaller);
   color: var(--accent-color-dark);
+}
+
+@media (min-width: 360px) {
+  .button.header__button {
+    font-size: var(--font-size-default);
+  }
 }
 
 @media (min-width: 768px) {
