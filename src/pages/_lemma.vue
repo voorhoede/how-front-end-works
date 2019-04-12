@@ -3,7 +3,7 @@
     <app-header :title="page.title" :concepts="page.concepts"/>
 
     <main class="site-content__main center-column" role="main">
-      <back-button class="site-content__back-button" />
+      <back-button />
 
       <lemma-block :lemma="page" />
     </main>
