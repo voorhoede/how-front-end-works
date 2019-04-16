@@ -30,6 +30,7 @@ module.exports = {
   loading: { color: '#fcbe40' },
 
   modules: [
+    '@nuxtjs/pwa',
     ['@nuxtjs/sitemap', { // https://github.com/nuxt-community/sitemap-module
       path: '/sitemap.xml',
       hostname: baseUrl,
