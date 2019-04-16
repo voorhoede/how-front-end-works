@@ -71,6 +71,10 @@ module.exports = {
     }],
   ],
 
+  plugins: [
+    { src: '~/plugins/install-notification.js', ssr: false }
+  ],
+
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       // if the returned position is falsy or an empty object,
