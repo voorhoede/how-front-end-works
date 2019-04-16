@@ -30,7 +30,31 @@ module.exports = {
   loading: { color: '#fcbe40' },
 
   modules: [
-    '@nuxtjs/pwa',
+    ['@nuxtjs/pwa', {
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: 'https://www.datocms-assets.com/.*',
+            handler: 'cacheFirst',
+            method: 'GET'
+          }
+        ]
+      },
+      meta: {
+        mobileAppIOS: true,
+      },
+      manifest: {
+        name: 'How Front-End Works',
+        short_name: 'How Front-End Works',
+        start_url: '/',
+        display: 'standalone',
+        theme_color: '#13a095',
+        background_color: '#c5f3f0',
+      },
+      icon: {
+        iconSrc: 'src/static/icons/icon.png',
+      },
+    }],
     ['@nuxtjs/sitemap', { // https://github.com/nuxt-community/sitemap-module
       path: '/sitemap.xml',
       hostname: baseUrl,
