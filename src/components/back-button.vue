@@ -23,14 +23,11 @@ export default {
 .back-button {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-bottom: var(--spacing-double);
   padding-bottom: 0;
-  background: none;
   font-size: var(--font-size-smaller);
   border: none;
-  text-align: right;
-  right: 0;
 }
 
 .back-button__icon {
@@ -42,7 +39,6 @@ export default {
   transition: fill .15s linear;
 }
 
-.back-button__content,
 .back-button__content {
   border-bottom: 1px solid transparent;
 }

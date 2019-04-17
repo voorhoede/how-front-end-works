@@ -38,7 +38,7 @@ export default {
 @import '../assets/variables.css';
 
 .concept {
-  margin-top: var(--spacing-default);
+  margin: var(--spacing-default) 0 var(--spacing-double) ;
   outline: none;
   position: relative;
 }
@@ -69,6 +69,12 @@ export default {
   .concept__image {
     margin-bottom: 0;
     margin-right: var(--spacing-double);
+  }
+}
+
+@media (min-width: 600px) {
+  .concept {
+    margin-bottom: calc(var(--spacing-default) * 5);
   }
 }
 

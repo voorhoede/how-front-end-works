@@ -1,9 +1,9 @@
 <template>
   <div class="site-content">
-    <app-header :title="page.title" :concept-icon="page.concepts[0].icon"/>
+    <app-header :title="page.title" :concepts="page.concepts"/>
 
     <main class="site-content__main center-column" role="main">
-      <back-button class="site-content__back-button" />
+      <back-button />
 
       <lemma-block :lemma="page" />
     </main>
