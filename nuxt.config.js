@@ -21,6 +21,13 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-startup-image', href: '/pwa/ios-launch-1125x2436.png', media: '(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)'}, // iPhone X
+      { rel: 'apple-touch-startup-image', href: '/pwa/ios-launch-750x1334.png', media: '(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)'}, // iPhone 8, 7, 6s, 6
+      { rel: 'apple-touch-startup-image', href: '/pwa/ios-launch-1242x2208.png', media: '(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)'}, // iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus
+      { rel: 'apple-touch-startup-image', href: '/pwa/ios-launch-640x1136.png', media: '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'}, // iPhone 5
+      { rel: 'apple-touch-startup-image', href: '/pwa/ios-launch-1536x2048.png', media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)'}, // iPad Mini, Air
+      { rel: 'apple-touch-startup-image', href: '/pwa/ios-launch-1668x2224.png', media: '(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)'}, // iPad Pro 10.5"
+      { rel: 'apple-touch-startup-image', href: '/pwa/ios-launch-2048x2732.png', media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)'}, // iPad Pro 12.9"
     ]
   },
 
@@ -30,6 +37,31 @@ module.exports = {
   loading: { color: '#fcbe40' },
 
   modules: [
+    ['@nuxtjs/pwa', {
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: 'https://www.datocms-assets.com/.*',
+            handler: 'cacheFirst',
+            method: 'GET'
+          }
+        ]
+      },
+      meta: {
+        mobileAppIOS: true,
+      },
+      manifest: {
+        name: 'How Front-End Works',
+        short_name: 'How Front-End Works',
+        start_url: '/',
+        display: 'standalone',
+        theme_color: '#13a095',
+        background_color: '#c5f3f0',
+      },
+      icon: {
+        iconSrc: 'src/static/pwa/icon.png',
+      },
+    }],
     ['@nuxtjs/sitemap', { // https://github.com/nuxt-community/sitemap-module
       path: '/sitemap.xml',
       hostname: baseUrl,
@@ -37,6 +69,10 @@ module.exports = {
       exclude: ['/styles'],
       routes: fs.readdirSync('./src/static/data/lemmas').map(file => file.replace('.json', ''))
     }],
+  ],
+
+  plugins: [
+    { src: '~/plugins/install-notification.js', ssr: false }
   ],
 
   router: {
