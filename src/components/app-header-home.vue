@@ -8,8 +8,7 @@
 
         <div class="header-home__description" v-html="description" />
 
-        <navigation-button class="header-home__button"
-                           :url="buttonUrl"
+        <navigation-button :url="buttonUrl"
                            :label="buttonLabel" />
       </div>
 
@@ -250,20 +249,5 @@ export default {
   .header-home__description {
     max-width: 35vw;
   }
-}
-
-.button.header-home__button {
-  border: 1px solid var(--accent-color-dark);
-  color: var(--accent-color-dark);
-}
-
-@media (min-width: 768px) {
-  .button.header-home__button {
-    margin-bottom: 0;
-  }
-}
-
-.button.header-home__button svg path {
-  fill: var(--accent-color-dark);
 }
 </style>

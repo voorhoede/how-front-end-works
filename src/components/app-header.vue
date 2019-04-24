@@ -7,7 +7,6 @@
         </h1>
 
         <navigation-button v-if="buttonLabel"
-                           class="header__button"
                            :url="buttonUrl"
                            :label="buttonLabel" />
 
@@ -101,30 +100,6 @@ export default {
 .header__title a:hover,
 .header__title a:focus {
   border-bottom: 1px solid var(--accent-color-dark);
-}
-
-.button.header__button {
-  flex: 0 0 auto;
-  margin-left: var(--spacing-half);
-  border: 1px solid var(--accent-color-dark);
-  font-size: var(--font-size-smaller);
-  color: var(--accent-color-dark);
-}
-
-@media (min-width: 360px) {
-  .button.header__button {
-    font-size: var(--font-size-default);
-  }
-}
-
-@media (min-width: 768px) {
-  .button.header__button {
-    margin-bottom: 0;
-  }
-}
-
-.button.header__button svg path {
-  fill: var(--accent-color-dark);
 }
 
 .header__image {
