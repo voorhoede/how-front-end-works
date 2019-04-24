@@ -67,7 +67,7 @@ module.exports = {
       hostname: baseUrl,
       generate: true,
       exclude: ['/styles'],
-      routes: fs.readdirSync('./src/static/data/lemmas').map(file => file.replace('.json', ''))
+      routes: fs.readdirSync('./src/static/data/topics').map(file => file.replace('.json', ''))
     }],
   ],
 
@@ -164,6 +164,6 @@ module.exports = {
 
   generate: {
     dir: 'dist/app/',
-    routes: fs.readdirSync('./src/static/data/lemmas').map(file => file.replace('.json', ''))
+    routes: fs.readdirSync('./src/static/data/topics').map(file => file.replace('.json', ''))
   }
 }

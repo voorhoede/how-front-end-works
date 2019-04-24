@@ -3,7 +3,7 @@ const dataDir = `src/static/data/`
 module.exports = (dato, root, i18n) => {
   generateAlphabeticalIndex(dato, root, i18n);
   generateIndex(dato, root, i18n);
-  generateLemmas(dato, root, i18n);
+  generateTopics(dato, root, i18n);
 }
 
 function generateAlphabeticalIndex(dato, root, i18n) {
@@ -16,12 +16,12 @@ function generateAlphabeticalIndex(dato, root, i18n) {
     headerColor: dato.siteInfo.headerColor.hex,
     headerImage: dato.siteInfo.seo.image.url(),
     introduction: dato.siteInfo.introduction,
-    lemmaColor: dato.siteInfo.lemmaColor.hex,
-    lemmas: dato.lemmata.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-                        .map(lemma => {
+    topicColor: dato.siteInfo.topicColor.hex,
+    topics: dato.topics.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+                        .map(topic => {
                           return {
-                            name: lemma.name,
-                            slug: lemma.slug
+                            name: topic.name,
+                            slug: topic.slug
                           }
                         }),
     seo: {
@@ -46,12 +46,12 @@ function generateIndex(dato, root, i18n) {
         description: concept.description,
         icon: concept.icon.url(),
         image: concept.image.url(),
-        lemmas: concept.lemmas.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-                              .map(lemma => {
+        topics: concept.topics.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+                              .map(topic => {
                                 return {
-                                  color: dato.siteInfo.lemmaColor.hex,
-                                  name: lemma.name,
-                                  slug: lemma.slug
+                                  color: dato.siteInfo.topicColor.hex,
+                                  name: topic.name,
+                                  slug: topic.slug
                                 }
                               }),
         name: concept.name,
@@ -80,12 +80,12 @@ function generateIndex(dato, root, i18n) {
   });
 }
 
-function generateLemmas(dato, root, i18n) {
-  dato.lemmata.forEach(lemma => {
-    root.createDataFile(`${dataDir}lemmas/${lemma.slug}.json`, 'json', {
+function generateTopics(dato, root, i18n) {
+  dato.topics.forEach(topic => {
+    root.createDataFile(`${dataDir}topics/${topic.slug}.json`, 'json', {
       concepts: dato.concepts.filter(concept => {
-        return concept.lemmas.some(conceptLemma => {
-          return conceptLemma.id === lemma.id
+        return concept.topics.some(conceptTopic => {
+          return conceptTopic.id === topic.id
         });
       }).sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
         .map(relatedConcept => {
@@ -96,30 +96,30 @@ function generateLemmas(dato, root, i18n) {
             slug: relatedConcept.slug
           }
       }),
-      description: lemma.description,
+      description: topic.description,
       footer: dato.siteInfo.footer,
       headerColor: dato.siteInfo.headerColor.hex,
-      image: lemma.image ? lemma.image.url() : '',
-      name: lemma.name,
-      relatedLemmas: lemma.relatedLemmas.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-                                        .map(relatedLemma => {
+      image: topic.image ? topic.image.url() : '',
+      name: topic.name,
+      relatedTopics: topic.relatedTopics.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+                                        .map(relatedTopic => {
                                           return {
-                                            color: dato.siteInfo.lemmaColor.hex,
-                                            name: relatedLemma.name,
-                                            slug: relatedLemma.slug,
+                                            color: dato.siteInfo.topicColor.hex,
+                                            name: relatedTopic.name,
+                                            slug: relatedTopic.slug,
                                           }
                                         }),
       seo: {
-        title: lemma.seo.title + ' - ' + dato.siteInfo.seo.title,
-        description: lemma.seo.description,
-        url: lemma.slug,
+        title: topic.seo.title + ' - ' + dato.siteInfo.seo.title,
+        description: topic.seo.description,
+        url: topic.slug,
         image: {
-          height: lemma.seo.image ? lemma.seo.image.height : '',
-          url: lemma.seo.image ? lemma.seo.image.url() : '',
-          width: lemma.seo.image ? lemma.seo.image.width : ''
+          height: topic.seo.image ? topic.seo.image.height : '',
+          url: topic.seo.image ? topic.seo.image.url() : '',
+          width: topic.seo.image ? topic.seo.image.width : ''
         }
       },
-      slug: lemma.slug,
+      slug: topic.slug,
       title: dato.siteInfo.title
     });
   });

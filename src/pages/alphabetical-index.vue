@@ -11,17 +11,17 @@
 
         <h2 class="a11y-sr-only">Topics</h2>
 
-        <div v-if="filteredLemmas.length" class="alphabetical-index">
-          <index-list v-for="(lemmas, key) in sortedGroupedLemmas"
+        <div v-if="filteredTopics.length" class="alphabetical-index">
+          <index-list v-for="(topics, key) in sortedGroupedTopics"
                       :key="key"
                       :indexLetter="key"
-                      :lemmaColor="page.lemmaColor"
-                      :lemmas="lemmas" />
+                      :topicColor="page.topicColor"
+                      :topics="topics" />
           <div v-if="isSearching"
                class="a11y-sr-only"
                role="status"
                aria-live="polite">
-            {{ filteredLemmas.length }} {{ filteredLemmas.length === 1 ? 'filter result' : 'filter results' }}
+            {{ filteredTopics.length }} {{ filteredTopics.length === 1 ? 'filter result' : 'filter results' }}
           </div>
         </div>
         <div v-else
@@ -74,28 +74,28 @@ export default {
     }
   },
   computed: {
-    filteredLemmas() {
+    filteredTopics() {
       const searchValue = this.searchValue;
       const searchRegExp = new RegExp(searchValue, 'i')
 
       return searchValue
-        ? this.page.lemmas.filter(lemma => searchRegExp.test(lemma.name))
-        : this.page.lemmas
+        ? this.page.topics.filter(topic => searchRegExp.test(topic.name))
+        : this.page.topics
     },
-    groupedLemmas() {
-      return this.filteredLemmas.reduce((acc, lemma) => {
-        const firstLetter = lemma.name.charAt(0).toLowerCase()
+    groupedTopics() {
+      return this.filteredTopics.reduce((acc, topic) => {
+        const firstLetter = topic.name.charAt(0).toLowerCase()
         const content = acc[firstLetter] ? acc[firstLetter] : []
-        content.push(lemma)
+        content.push(topic)
         acc[firstLetter] = content
         return acc
       }, {})
     },
-    sortedGroupedLemmas() {
-      const lemmas = this.groupedLemmas
-      if(typeof lemmas !== undefined) {
-        Object.keys(lemmas).forEach(lemmaKey => lemmas[lemmaKey].sort(this.ignoreCaseSort))
-        return lemmas
+    sortedGroupedTopics() {
+      const topics = this.groupedTopics
+      if(typeof topics !== undefined) {
+        Object.keys(topics).forEach(topicKey => topics[topicKey].sort(this.ignoreCaseSort))
+        return topics
       }
     }
   }
