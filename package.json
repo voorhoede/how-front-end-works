@@ -23,7 +23,7 @@
     "axios": "0.18.0",
     "datocms-client": "0.6.2",
     "dotenv": "5.0.1",
-    "lodash": "4.17.10",
+    "lodash": "4.17.11",
     "normalize.css": "8.0.0",
     "nuxt": "2.6.2"
   },
