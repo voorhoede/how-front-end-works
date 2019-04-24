@@ -26,8 +26,8 @@ export default {
   },
   computed: {
     toValue() {
-      if (this.labelType === 'lemma') {
-        return { name: this.labelType, params: { 'lemma': this.labelInfo.slug } }
+      if (this.labelType === 'topic') {
+        return { name: this.labelType, params: { 'topic': this.labelInfo.slug } }
       } else {
         return { path: `/#${this.labelInfo.slug}` }
       }

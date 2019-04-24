@@ -5,7 +5,7 @@
     <main class="site-content__main center-column" role="main">
       <back-button />
 
-      <lemma-block :lemma="page" />
+      <topic-block :topic="page" />
     </main>
 
     <app-footer :body="page.footer" />
@@ -18,13 +18,13 @@ import AppHeader from '../components/app-header'
 import getPageData from '../lib/get-page-data'
 import seoHead from '../lib/seo-head'
 import BackButton from '../components/back-button'
-import LemmaBlock from '../components/lemma-block'
+import TopicBlock from '../components/topic-block'
 
 export default {
-  components: { AppFooter, AppHeader, BackButton, LemmaBlock },
+  components: { AppFooter, AppHeader, BackButton, TopicBlock },
   async asyncData({ params }) {
-    const { lemma } = params
-    const page = await getPageData(`lemmas/${ lemma }`)
+    const { topic } = params
+    const page = await getPageData(`topics/${ topic }`)
     return { page }
   },
   head() {

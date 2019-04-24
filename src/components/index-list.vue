@@ -1,14 +1,14 @@
 <template>
   <section class="index-list">
-    <h3 class="index-list__title" :style="`background-color: ${lemmaColor};`">
+    <h3 class="index-list__title" :style="`background-color: ${topicColor};`">
       <span class="a11y-sr-only">Items starting with</span> {{ indexLetter }}
     </h3>
 
-    <ul class="index-list__lemmas flat-list">
-      <li v-for="lemma in lemmas"
-          :key="lemma.slug"
+    <ul class="index-list__topics flat-list">
+      <li v-for="topic in topics"
+          :key="topic.slug"
           class="index-list__link">
-        <nuxt-link :to="{ name: 'lemma', params: { lemma: lemma.slug, referrer: $route.name }}">{{ lemma.name }}</nuxt-link>
+        <nuxt-link :to="{ name: 'topic', params: { topic: topic.slug, referrer: $route.name }}">{{ topic.name }}</nuxt-link>
       </li>
     </ul>
   </section>
@@ -21,11 +21,11 @@ export default {
       type: String,
       required: true
     },
-    lemmaColor: {
+    topicColor: {
       type: String,
       required: true
     },
-    lemmas: {
+    topics: {
       type: Array,
       required: true
     },
@@ -65,7 +65,7 @@ export default {
   text-transform: uppercase;
 }
 
-.index-list__lemmas {
+.index-list__topics {
   margin-left: 3.5rem;
 }
 

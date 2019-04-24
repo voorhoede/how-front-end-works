@@ -7,11 +7,11 @@
 
     <div class="concept__description" v-html="concept.description"></div>
 
-    <h3 class="h5">Relevant techniques</h3>
+    <h3 class="h5">Relevant topics</h3>
 
     <ul class="concept__labels flat-list">
-      <li v-for="lemma in concept.lemmas" :key="lemma.slug">
-        <lemma-label :labelInfo="lemma" labelType="lemma" />
+      <li v-for="topic in concept.topics" :key="topic.slug">
+        <topic-label :labelInfo="topic" labelType="topic" />
       </li>
     </ul>
 
@@ -21,10 +21,10 @@
 
 <script>
 import JumpToTop from '../components/jump-to-top'
-import LemmaLabel from '../components/lemma-label'
+import TopicLabel from '../components/topic-label'
 
 export default {
-  components: { JumpToTop, LemmaLabel },
+  components: { JumpToTop, TopicLabel },
   props: {
     concept: {
       type: Object,
