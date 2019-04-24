@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link class="button" :to="url">
-    <div class="button__link-area">
+  <nuxt-link class="navigation-button" :to="url">
+    <div class="navigation-button__link-area">
       {{ label }}
-      <arrow-icon class="button__icon" />
+      <arrow-icon class="navigation-button__icon" />
     </div>
   </nuxt-link>
 </template>
@@ -28,38 +28,45 @@ export default {
 <style>
 @import '../assets/variables.css';
 
-.button {
+.navigation-button {
   display: inline-block;
   padding-bottom: 0;
-  border: 1px solid var(--grey-dark);
+  border: 1px solid var(--accent-color-dark);
   border-radius: 30px;
+  color: var(--accent-color-dark);
 }
 
-.button__link-area {
+.navigation-button__link-area {
   display: flex;
   align-items: center;
   padding: .3rem .9rem;
-  border-radius: 30px;
-  background-color: transparent;
-  transition: background-color .08s linear;
 }
 
-.button__icon {
+.navigation-button__icon {
   margin-left: var(--spacing-half);
   width: .8rem;
   height: 1.2rem;
-  fill: var(--grey-dark);
   transform: rotate(90deg) translateY(0);
 }
 
-.button:hover .button__link-area,
-.button:focus .button__link-area {
-  background-color: rgba(255, 255, 255, .5);
+.navigation-button__icon path {
+  fill: var(--accent-color-dark)
 }
 
-.button:hover .button__icon,
-.button:focus .button__icon {
+.navigation-button:hover,
+.navigation-button:focus {
+  transition: border-color .15s linear, color .15s linear;
+  border-color: var(--grey-dark);
+  color: var(--grey-dark);
+}
+
+.navigation-button:hover .navigation-button__icon,
+.navigation-button:focus .navigation-button__icon {
   animation: bounce-arrow-right .25s ease-in-out;
+}
+
+.navigation-button:hover .navigation-button__icon path,
+.navigation-button:focus .navigation-button__icon path {
   transition: fill .15s linear;
   fill: var(--grey-dark);
 }
