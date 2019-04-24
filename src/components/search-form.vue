@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit.prevent class="search-form">
     <label class="search-form__label" for="search">
-      <span class="a11y-sr-only">Filter techniques</span>
+      <span class="a11y-sr-only">Filter topics</span>
       <input v-on:input="$emit('input', $event.target.value)"
              class="search-form__input"
              type="text"

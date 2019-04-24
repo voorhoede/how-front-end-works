@@ -5,11 +5,11 @@
                   :title="page.title" />
 
       <main class="site-content__main center-column">
-        <h2 class="a11y-sr-only">Filter techniques</h2>
+        <h2 class="a11y-sr-only">Filter topics</h2>
 
-        <search-form v-model="searchValue" placeholderText="Filter techniques" @toggleSearchStatus="getSearchStatus" />
+        <search-form v-model="searchValue" placeholderText="Filter topics" @toggleSearchStatus="getSearchStatus" />
 
-        <h2 class="a11y-sr-only">Techniques</h2>
+        <h2 class="a11y-sr-only">Topics</h2>
 
         <div v-if="filteredLemmas.length" class="alphabetical-index">
           <index-list v-for="(lemmas, key) in sortedGroupedLemmas"

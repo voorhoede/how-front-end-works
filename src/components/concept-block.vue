@@ -7,7 +7,7 @@
 
     <div class="concept__description" v-html="concept.description"></div>
 
-    <h3 class="h5">Relevant techniques</h3>
+    <h3 class="h5">Relevant topics</h3>
 
     <ul class="concept__labels flat-list">
       <li v-for="lemma in concept.lemmas" :key="lemma.slug">
