@@ -3,7 +3,7 @@
     <div class="header-home">
       <div class="header-home__column center-column">
         <h1 class="header-home__title">
-          <nuxt-link to="/">{{ formatTitle.normal }} <span class="header-home__title--highlight">{{ formatTitle.highlight }}</span></nuxt-link>
+          {{ formatTitle.normal }} <span class="header-home__title--highlight">{{ formatTitle.highlight }}</span>
         </h1>
 
         <div class="header-home__description" v-html="description" />
@@ -190,17 +190,6 @@ export default {
   .header-home__title--highlight {
     text-align: left;
   }
-}
-
-.header-home__title a,
-.header-home__title--highlight {
-  border-bottom: 1px solid transparent;
-}
-
-.header-home__title a:hover,
-.header-home__title a:hover .header-home__title--highlight,
-.header-home__title a:focus {
-  border-bottom: 1px solid var(--accent-color-dark);
 }
 
 .header-home__description {
