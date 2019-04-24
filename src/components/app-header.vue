@@ -7,6 +7,7 @@
         </h1>
 
         <navigation-button v-if="buttonLabel"
+                           class="header__button"
                            :url="buttonUrl"
                            :label="buttonLabel" />
 
@@ -128,5 +129,9 @@ export default {
   .header__concept-icon {
     right: 0;
   }
+}
+
+.header__button {
+  flex: 0 0 auto;
 }
 </style>
