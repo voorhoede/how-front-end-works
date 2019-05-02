@@ -12,7 +12,7 @@ import ArrowIcon from '../static/icons/arrow.svg'
 export default {
   components: { ArrowIcon },
   computed: {
-    ...mapState(['indexPageUrl']),
+    indexPageUrl() { return this.$store.state.indexPageUrl },
   }
 }
 </script>
