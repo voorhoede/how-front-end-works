@@ -69,6 +69,17 @@ module.exports = {
       exclude: ['/styles'],
       routes: fs.readdirSync('./src/static/data/topics').map(file => file.replace('.json', ''))
     }],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-139455504-1',
+      set: [
+        /**
+         * Anonymize tracking
+         * @see https://www.themarketingtechnologist.co/setting-up-a-cookie-law-compliant-google-analytics-tracker/
+         */
+        { field: 'displayFeaturesTask', value: null },
+        { field: 'anonymizeIp', value: true },
+      ],
+    }]
   ],
 
   plugins: [
@@ -123,9 +134,6 @@ module.exports = {
       },
       'autoprefixer': {}
     },
-    vendor: [
-      'axios',
-    ],
     /*
     ** Run ESLint on save
     */
