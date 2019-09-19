@@ -125,3 +125,15 @@ a:focus {
     outline: none;
     border-bottom: 1px solid var(--grey-dark);
 }
+
+code {
+    padding: .1rem .3rem;
+    background-color: var(--grey-lighter);
+}
+
+pre {
+    overflow: auto;
+    padding: .2rem .4rem;
+    margin: var(--spacing-default) 0;
+    background-color: var(--grey-lighter);
+}
