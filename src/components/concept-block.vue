@@ -5,7 +5,7 @@
       {{ concept.name }}
     </h2>
 
-    <div class="concept__description" v-html="concept.description"></div>
+    <vue-markdown class="concept__description" :source="concept.description"></vue-markdown>
 
     <h3 class="h5">Relevant topics</h3>
 
@@ -22,9 +22,10 @@
 <script>
 import JumpToTop from '../components/jump-to-top'
 import TopicLabel from '../components/topic-label'
+import VueMarkdown from 'vue-markdown'
 
 export default {
-  components: { JumpToTop, TopicLabel },
+  components: { JumpToTop, TopicLabel, VueMarkdown },
   props: {
     concept: {
       type: Object,

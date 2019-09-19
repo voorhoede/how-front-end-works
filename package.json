@@ -26,7 +26,8 @@
     "dotenv": "5.0.1",
     "lodash": "^4.17.15",
     "normalize.css": "8.0.0",
-    "nuxt": "2.6.2"
+    "nuxt": "2.6.2",
+    "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
     "ajv": "6.5.0",

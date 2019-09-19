@@ -4,7 +4,7 @@
 
     <h2 class="topic__title h1">{{ topic.name }}</h2>
 
-    <div class="topic__description" v-html="topic.description"></div>
+    <vue-markdown class="topic__description" :source="topic.description"></vue-markdown>
 
     <h3 v-if="topic.concepts.length" class="h5">Part of</h3>
 
@@ -26,9 +26,10 @@
 
 <script>
 import TopicLabel from '../components/topic-label'
+import VueMarkdown from 'vue-markdown'
 
 export default {
-  components: { TopicLabel },
+  components: { TopicLabel, VueMarkdown },
   props: {
     topic: {
       type: Object,
