@@ -2,8 +2,6 @@
   <section class="topic">
     <img v-if="topic.image" class="topic__image" :src="topic.image" alt="">
 
-    <h2 class="topic__title h1">{{ topic.name }}</h2>
-
     <vue-markdown class="topic__description" :source="topic.description"></vue-markdown>
 
     <h3 v-if="topic.concepts.length" class="h5">Part of</h3>
@@ -69,6 +67,13 @@ export default {
 
 .topic__description {
   margin-bottom: calc(var(--spacing-default) * 3);
+}
+
+.topic__description h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-large);
 }
 
 .topic__labels {

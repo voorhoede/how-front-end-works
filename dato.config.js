@@ -1,3 +1,5 @@
+const generatePapers = require('./src/lib/generate-papers')
+
 const dataDir = `src/static/data/`
 
 module.exports = (dato, root, i18n) => {
@@ -5,6 +7,9 @@ module.exports = (dato, root, i18n) => {
   generateIndex(dato, root, i18n);
   generateTopics(dato, root, i18n);
 }
+
+// Extract the Dropbox Paper ID from its URL.
+const getPaperID = URL => URL ? URL.substring(URL.lastIndexOf('-') + 1) : null
 
 function generateAlphabeticalIndex(dato, root, i18n) {
   root.createDataFile(`${dataDir}alphabetical-index.json`, 'json', {
@@ -82,7 +87,11 @@ function generateIndex(dato, root, i18n) {
 
 function generateTopics(dato, root, i18n) {
   dato.topics.forEach(topic => {
+    const paperID = getPaperID(topic.paperUrl)
+    generatePapers(paperID)
+
     root.createDataFile(`${dataDir}topics/${topic.slug}.json`, 'json', {
+      paperID,
       concepts: dato.concepts.filter(concept => {
         return concept.topics.some(conceptTopic => {
           return conceptTopic.id === topic.id
