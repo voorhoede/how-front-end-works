@@ -46,9 +46,12 @@ function generateAlphabeticalIndex(dato, root, i18n) {
 function generateIndex(dato, root, i18n) {
   root.createDataFile(`${dataDir}index.json`, 'json', {
     concepts: dato.concepts.map(concept => {
+      const paperID = getPaperID(concept.paperUrl)
+      generatePapers(paperID)
+
       return {
+        paperID,
         color: concept.color.hex,
-        description: concept.description,
         icon: concept.icon.url(),
         image: concept.image.url(),
         topics: concept.topics.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
@@ -105,7 +108,6 @@ function generateTopics(dato, root, i18n) {
             slug: relatedConcept.slug
           }
       }),
-      description: topic.description,
       footer: dato.siteInfo.footer,
       headerColor: dato.siteInfo.headerColor.hex,
       image: topic.image ? topic.image.url() : '',

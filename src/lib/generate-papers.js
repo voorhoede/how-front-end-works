@@ -5,9 +5,14 @@ const fetch = require('isomorphic-fetch')
 
 const dataDir = `src/static/data/papers/`
 
+const removeTitle = doc => doc.split('\n').slice(1).join('\n').trim()
+
 const savePaperLocally = (doc, ID) => {
   mkdir(dataDir, { recursive: true }).then(() =>
-    writeFile(`${dataDir}${ID}.md`, '#' + doc.fileBinary)
+    writeFile(
+      `${dataDir}${ID}.md`,
+      removeTitle(doc.fileBinary.toString('binary'))
+    )
   )
 }
 
