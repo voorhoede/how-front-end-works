@@ -11,7 +11,8 @@ const savePaperLocally = (doc, ID) => {
   mkdir(dataDir, () => {
     writeFileSync(
       `${dataDir}${ID}.md`,
-      removeTitle(doc.fileBinary.toString('binary'))
+      removeTitle(doc.fileBinary.toString('utf8')),
+      'utf8'
     )
   })
 }
