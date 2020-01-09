@@ -34,11 +34,12 @@ export default {
 
     const pageResponses = await Promise.all(
       page.concepts.map(concept => getPageData(`papers/${concept.paperID}`, "md"))
-    );
+    )
 
-    const papers = Object.fromEntries(
-      page.concepts.map((concept, i) => [concept.paperID, pageResponses[i]])
-    );
+    const papers = page.concepts.reduce((acc, concept, index) => {
+      acc[concept.paperID] = pageResponses[index]
+      return acc
+    }, {})
 
     return { page, papers }
   },

@@ -1,4 +1,4 @@
-const { mkdir, writeFile } = require('fs').promises
+const { mkdir, writeFileSync } = require('fs')
 const dotenv = require('dotenv').config()
 const Dropbox = require('dropbox').Dropbox
 const fetch = require('isomorphic-fetch')
@@ -8,12 +8,12 @@ const dataDir = `src/static/data/papers/`
 const removeTitle = doc => doc.split('\n').slice(1).join('\n').trim()
 
 const savePaperLocally = (doc, ID) => {
-  mkdir(dataDir, { recursive: true }).then(() =>
-    writeFile(
+  mkdir(dataDir, () => {
+    writeFileSync(
       `${dataDir}${ID}.md`,
       removeTitle(doc.fileBinary.toString('binary'))
     )
-  )
+  })
 }
 
 module.exports = ID => {
