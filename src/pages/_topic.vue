@@ -31,7 +31,8 @@ export default {
     return seoHead(
       `${this.page.concepts[0].name} - ${this.page.name}`,
       this.page.slug,
-      this.paper
+      this.paper,
+      this.page.seoImage
     )
   }
 }

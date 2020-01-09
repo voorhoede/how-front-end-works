@@ -1,4 +1,4 @@
-export default function (title = '', slug = '', description = '') {
+export default function (title = '', slug = '', description = '', image = '') {
   return {
     title: title,
     meta: [
@@ -7,7 +7,7 @@ export default function (title = '', slug = '', description = '') {
       { hid: 'og:url', property: 'og:url', content: `https://www.howfrontendworks.com/${slug}` },
       { hid: 'og:title', property: 'og:title', content: title },
       { hid: 'og:description', property: 'og:description', content: description },
-      // image.url && { hid: 'og:image', property: 'og:image', content: image.url },
+      { hid: 'og:image', property: 'og:image', content: image },
       { hid: 'og:image:width', property: 'og:image:width', content: 805 },
       { hid: 'og:image:height', property: 'og:image:height', content: 450 },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
@@ -15,7 +15,7 @@ export default function (title = '', slug = '', description = '') {
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@devoorhoede' },
       { hid: 'twitter:title', name: 'twitter:title', content: title },
       { hid: 'twitter:description', name: 'twitter:description', content: description },
-      // { hid: 'twitter:image', name: 'twitter:image', content: image.url },
+      { hid: 'twitter:image', name: 'twitter:image', content: image },
     ].filter(Boolean),
     link: [
       { rel: 'canonical', href: `https://www.howfrontendworks.com/${slug}` },

@@ -24,6 +24,7 @@ function generateAlphabeticalIndex(dato, root, i18n) {
                             slug: topic.slug
                           }
                         }),
+    seoImage: dato.siteInfo.seoImage.url(),
     seo: {
       title: dato.siteInfo.seo.title,
       description: dato.siteInfo.seo.description,
@@ -66,6 +67,7 @@ function generateIndex(dato, root, i18n) {
     headerColor: dato.siteInfo.headerColor.hex,
     headerImage: dato.siteInfo.headerImage.url(),
     introduction: dato.siteInfo.introduction,
+    seoImage: dato.siteInfo.seoImage.url(),
     seo: {
       title: dato.siteInfo.seo.title,
       description: dato.siteInfo.seo.description,
@@ -109,6 +111,7 @@ function generateTopics(dato, root, i18n) {
                                             slug: relatedTopic.slug,
                                           }
                                         }),
+      seoImage: dato.siteInfo.seoImage.url(),
       seo: {
         title: topic.seo.title + ' - ' + dato.siteInfo.seo.title,
         description: topic.seo.description,
