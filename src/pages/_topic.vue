@@ -28,7 +28,11 @@ export default {
     return { page }
   },
   head() {
-    return seoHead(this.page.seo)
+    return seoHead(
+      `${this.page.concepts[0].name} - ${this.page.name}`,
+      this.page.slug,
+      this.paper
+    )
   }
 }
 </script>
