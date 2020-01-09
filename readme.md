@@ -29,7 +29,7 @@ nuxt.config.js    <- Nuxt app config
 
 ### Scripts
 
-This project requires [Node.js](http://nodejs.org/) (>= v8) and [npm](https://npmjs.org/) (comes with Node).
+This project requires [Node.js](http://nodejs.org/) (>= v10) and [npm](https://npmjs.org/) (comes with Node).
 
 After installing dependencies using `npm install` the following scripts are available:
 
