@@ -25,16 +25,6 @@ function generateAlphabeticalIndex(dato, root, i18n) {
                           }
                         }),
     seoImage: dato.siteInfo.seoImage.url(),
-    seo: {
-      title: dato.siteInfo.seo.title,
-      description: dato.siteInfo.seo.description,
-      url: 'alphabetical-index',
-      image: {
-        height: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.height : '',
-        url: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.url() : '',
-        width: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.width : ''
-      }
-    },
     title: dato.siteInfo.title
   });
 }
@@ -68,16 +58,6 @@ function generateIndex(dato, root, i18n) {
     headerImage: dato.siteInfo.headerImage.url(),
     introduction: dato.siteInfo.introduction,
     seoImage: dato.siteInfo.seoImage.url(),
-    seo: {
-      title: dato.siteInfo.seo.title,
-      description: dato.siteInfo.seo.description,
-      url: '',
-      image: {
-        height: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.height : '',
-        url: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.url() : '',
-        width: dato.siteInfo.seo.image ? dato.siteInfo.seo.image.width : ''
-      }
-    },
     title: dato.siteInfo.title
   });
 }
@@ -112,16 +92,6 @@ function generateTopics(dato, root, i18n) {
                                           }
                                         }),
       seoImage: dato.siteInfo.seoImage.url(),
-      seo: {
-        title: topic.seo.title + ' - ' + dato.siteInfo.seo.title,
-        description: topic.seo.description,
-        url: topic.slug,
-        image: {
-          height: topic.seo.image ? topic.seo.image.height : '',
-          url: topic.seo.image ? topic.seo.image.url() : '',
-          width: topic.seo.image ? topic.seo.image.width : ''
-        }
-      },
       slug: topic.slug,
       title: dato.siteInfo.title
     });
