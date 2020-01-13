@@ -9,7 +9,10 @@
 
     <main class="site-content__main center-column">
       <concept-block v-for="concept in page.concepts"
-                     :concept="concept"
+                     :concept="{
+                       ...concept,
+                       description: papers[concept.paperID]
+                     }"
                      :key="concept.name" />
     </main>
 
@@ -28,7 +31,17 @@ export default {
   components: { AppFooter, AppHeaderHome, ConceptBlock },
   async asyncData() {
     const page = await getPageData('index')
-    return { page }
+
+    const pageResponses = await Promise.all(
+      page.concepts.map(concept => getPageData(`papers/${concept.paperID}`, 'md'))
+    )
+
+    const papers = page.concepts.reduce((acc, concept, index) => {
+      acc[concept.paperID] = pageResponses[index]
+      return acc
+    }, {})
+
+    return { page, papers }
   },
   head() {
     return seoHead(this.page.seo)
