@@ -32,8 +32,9 @@
     "datocms-client": "0.6.2",
     "dotenv-safe": "^8.2.0",
     "dropbox": "^4.0.30",
-    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.15",
+    "mkdirp": "^0.5.1",
+    "node-fetch": "^2.6.0",
     "normalize.css": "8.0.0",
     "nuxt": "2.6.2",
     "vue-markdown": "^2.2.4"
