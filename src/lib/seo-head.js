@@ -1,4 +1,8 @@
+const markdownDescription = require('markdown-description')
+
 export default function (title = '', slug = '', description = '', image = '') {
+  description = markdownDescription(description)
+
   return {
     title: title,
     meta: [
