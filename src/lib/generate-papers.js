@@ -1,5 +1,5 @@
 const { mkdir, writeFileSync } = require('fs')
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv-safe').config()
 const Dropbox = require('dropbox').Dropbox
 const fetch = require('isomorphic-fetch')
 
