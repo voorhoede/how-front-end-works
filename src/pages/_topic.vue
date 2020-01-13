@@ -27,7 +27,7 @@ export default {
     const page = await getPageData(`topics/${ topic }`)
     const paper = page.paperID
       ? await getPageData(`papers/${ page.paperID }`, 'md')
-      : "This page's content couldn't be found.";
+      : `This page’s content could not be found.`;
     return { page, paper }
   },
   head() {

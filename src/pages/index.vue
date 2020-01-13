@@ -33,7 +33,7 @@ export default {
     const page = await getPageData('index')
 
     const pageResponses = await Promise.all(
-      page.concepts.map(concept => getPageData(`papers/${concept.paperID}`, "md"))
+      page.concepts.map(concept => getPageData(`papers/${concept.paperID}`, 'md'))
     )
 
     const papers = page.concepts.reduce((acc, concept, index) => {
