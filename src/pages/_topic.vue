@@ -31,7 +31,12 @@ export default {
     return { page, paper }
   },
   head() {
-    return seoHead(this.page.seo)
+    return seoHead(
+      `${this.page.concepts.length ? this.page.concepts[0].name : this.page.title} - ${this.page.name}`,
+      this.page.slug,
+      this.paper,
+      this.page.seoImage
+    )
   }
 }
 </script>

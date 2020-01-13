@@ -44,7 +44,12 @@ export default {
     return { page, papers }
   },
   head() {
-    return seoHead(this.page.seo)
+    return seoHead(
+      this.page.title,
+      this.page.slug,
+      this.page.introduction,
+      this.page.seoImage
+    )
   },
   fetch({ route,store }) {
     store.commit('setIndexPageUrl', { indexPageUrl: route.fullPath })

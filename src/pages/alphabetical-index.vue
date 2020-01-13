@@ -52,7 +52,12 @@ export default {
     return { page }
   },
   head() {
-    return seoHead(this.page.seo)
+    return seoHead(
+      this.page.title,
+      this.page.slug,
+      this.page.introduction,
+      this.page.seoImage
+    )
   },
   data() {
     return {
