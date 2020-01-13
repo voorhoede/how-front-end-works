@@ -5,7 +5,7 @@
     <main class="site-content__main center-column" role="main">
       <back-button />
 
-      <topic-block :topic="page" />
+      <topic-block :topic="{...page, description: paper}" />
     </main>
 
     <app-footer :body="page.footer" />
@@ -25,7 +25,10 @@ export default {
   async asyncData({ params }) {
     const { topic } = params
     const page = await getPageData(`topics/${ topic }`)
-    return { page }
+    const paper = page.paperID
+      ? await getPageData(`papers/${ page.paperID }`, 'md')
+      : `This page’s content could not be found.`;
+    return { page, paper }
   },
   head() {
     return seoHead(
