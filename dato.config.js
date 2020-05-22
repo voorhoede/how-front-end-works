@@ -19,7 +19,7 @@ function generateAlphabeticalIndex(dato, root, i18n) {
       url: dato.siteInfo.alphabeticalPageHeaderButton.url
     },
     headerColor: dato.siteInfo.headerColor.hex,
-    headerImage: dato.siteInfo.seo.image.url(),
+    headerImage: dato.siteInfo.seoImage.url(),
     introduction: dato.siteInfo.introduction,
     topicColor: dato.siteInfo.topicColor.hex,
     topics: dato.topics.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
