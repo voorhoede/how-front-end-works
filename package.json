@@ -37,7 +37,7 @@
     "mkdirp": "^0.5.1",
     "node-fetch": "^2.6.0",
     "normalize.css": "8.0.1",
-    "nuxt": "2.6.2",
+    "nuxt": "2.14.10",
     "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
