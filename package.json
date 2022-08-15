@@ -35,7 +35,7 @@
     "lodash": "^4.17.15",
     "markdown-description": "^1.1.0",
     "mkdirp": "^0.5.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.2.10",
     "normalize.css": "8.0.1",
     "nuxt": "2.6.2",
     "vue-markdown": "^2.2.4"
