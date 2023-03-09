@@ -34,7 +34,7 @@
     "dropbox": "^4.0.30",
     "lodash": "^4.17.15",
     "markdown-description": "^1.1.0",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^2.1.5",
     "node-fetch": "^2.6.0",
     "normalize.css": "8.0.1",
     "nuxt": "2.6.2",
